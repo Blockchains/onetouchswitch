@@ -3,7 +3,7 @@ import { z } from "zod";
 import { compare, CompareInput } from "./cost.mjs";
 import { OFFER_COPY, QUOTE_COPY } from "./copy.mjs";
 
-export const Quote = z.object({ label: z.string().min(1).max(120), provider_id: z.string().optional(), monthly_pence: z.number().int().min(0), upfront_pence: z.number().int().min(0).default(0), contract_months: z.number().int().min(1).max(36), annual_rise_pence: z.number().int().min(0).default(0), rise_month: z.number().int().min(1).max(12).optional(), cashback_pence: z.number().int().min(0).default(0), download_mbps: z.number().optional() });
+export const Quote = z.object({ label: z.string().min(1).max(120), provider_id: z.string().optional(), monthly_pence: z.number().int().min(0), upfront_pence: z.number().int().min(0).default(0), contract_months: z.number().int().min(1).max(36), annual_rise_pence: z.number().int().min(0).default(0), rise_month: z.number().int().min(1).max(12).optional(), from_offer: z.string().optional(), cashback_pence: z.number().int().min(0).default(0), download_mbps: z.number().optional() });
 export const CompareReq = z.object({ postcode: z.string().optional(), start: z.string().regex(/^\d{4}-\d{2}$/), horizon_months: z.number().int().min(1).max(36).optional(), current: CompareInput.shape.current, offer_ids: z.array(z.string()).max(30).default([]), quotes: z.array(Quote).max(20).default([]) });
 
 /** @param catalogueDoc published catalogue {version, offers}; @param providerView (id) => provider view or null */

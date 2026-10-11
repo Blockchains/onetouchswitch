@@ -1,14 +1,16 @@
-# onetouchswitch (comparison platform)
+# onetouchswitch (static comparison app)
 
-> Local-first, self-hostable UK broadband comparison core for onetouchswitch.com: local postcode data (OS Code-Point Open), manual address, reviewed versioned offer catalogue, deterministic contract-cost engine, provider links with the copy "Published offer. Check availability with the provider." No orderability claims.
+> Static-only UK broadband comparison for onetouchswitch.com. It runs on GitHub Pages with client-side JS: OS Code-Point Open postcodes as static chunks, manual address, a reviewed versioned offer catalogue, a deterministic contract-cost engine in the browser, guides with search, saved comparisons in localStorage, in-browser PDF bill reading, and offline support. It has no runtime server or third-party API, and makes no orderability claims.
 
-## Live static API
-- [Catalogue](https://blockchains.github.io/onetouchswitch/api/v1/index.json)
+## App and static API
+- [App](https://blockchains.github.io/onetouchswitch/)
+- [API index](https://blockchains.github.io/onetouchswitch/api/v1/index.json)
 - [Postcode file example HU1](https://blockchains.github.io/onetouchswitch/api/v1/postcode/HU1.json)
 - [Providers](https://blockchains.github.io/onetouchswitch/api/v1/providers.json)
+- [Approved handoff links](https://blockchains.github.io/onetouchswitch/api/v1/handoff.json)
 - [Published offers](https://blockchains.github.io/onetouchswitch/api/v1/catalogue/current.json)
+- [Guides index](https://blockchains.github.io/onetouchswitch/api/v1/guides/index.json)
 - [Engine (ESM)](https://blockchains.github.io/onetouchswitch/engine/v1/ots-engine.mjs)
-- [Demo](https://blockchains.github.io/onetouchswitch/)
 
 ## Docs
 - [README](https://github.com/Blockchains/onetouchswitch/blob/main/README.md)

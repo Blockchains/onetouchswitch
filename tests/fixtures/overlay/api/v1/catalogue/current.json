@@ -1,0 +1,11 @@
+{
+ "version": 1,
+ "published_at": "2026-10-11T00:00:00.000Z",
+ "publisher": "TEST FIXTURE",
+ "_warning": "TEST FIXTURE ONLY. These are not real offers and are never served in production (only used when OTS_CATALOGUE_DIR points here).",
+ "offer_count": 2,
+ "offers": [
+  { "id": "fixture-fibre-a", "provider_id": "bt", "name": "TEST FIXTURE Fibre A", "monthly_pence": 3000, "upfront_pence": 0, "contract_months": 24, "annual_rise_pence": 300, "rise_month": 4, "cashback_pence": 5000, "download_mbps": 150, "technology": "FTTP", "regions": {}, "source_url": "https://example.org/fixture-a", "observed_at": "2026-10-01T00:00:00Z", "collected_by": "manual", "reviewed_by": "test", "reviewed_at": "2026-10-01T00:00:00Z" },
+  { "id": "fixture-fibre-b", "provider_id": "kcom", "name": "TEST FIXTURE Fibre B", "monthly_pence": 2500, "upfront_pence": 2999, "contract_months": 18, "annual_rise_pence": 0, "cashback_pence": 0, "download_mbps": 300, "technology": "FTTP", "regions": { "areas": ["HU"] }, "source_url": "https://example.org/fixture-b", "observed_at": "2026-10-01T00:00:00Z", "collected_by": "manual", "reviewed_by": "test", "reviewed_at": "2026-10-01T00:00:00Z" }
+ ]
+}

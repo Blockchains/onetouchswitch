@@ -1,52 +1,64 @@
-# onetouchswitch — local-first broadband comparison platform
+# onetouchswitch: static-only broadband comparison
 
-A self-hostable comparison core for **[onetouchswitch.com](https://onetouchswitch.com)** (built on touch.grok.me). It answers one question honestly: *what will each deal cost me over the contract, compared with staying put?* It uses only data held locally, and it never claims a deal is available or orderable at your address.
+The comparison engine and app for **[onetouchswitch.com](https://onetouchswitch.com)** (touch.grok.me). It answers one question honestly: *what will each deal cost me over the contract, compared with staying put?*
+
+**It runs entirely on static files plus JavaScript in the browser.** There is no server, database, queue, OCR service, paid API or third-party API at runtime. The same bundle works on GitHub Pages, on touch.grok.me, or on any static host, and keeps working offline once loaded.
+
+- **App:** https://blockchains.github.io/onetouchswitch/
+- **Static API index:** https://blockchains.github.io/onetouchswitch/api/v1/index.json
+- **Engine (ESM) for touch.grok.me:** https://blockchains.github.io/onetouchswitch/engine/v1/ots-engine.mjs
+- **Guides:** https://blockchains.github.io/onetouchswitch/guides/
 
 ```
-customer → web app ─ postcode (local OS Code-Point Open / self-hosted postcodes.io)
-                    ─ manual address (normalised, NOT verified; optional libpostal)
-                    ─ published offers (local reviewed catalogue, versioned) + quotes the customer enters
-                    ─ deterministic cost engine (dinero.js, integer pence)  → results + session record
-                    ─ provider links ("Published offer. Check availability with the provider.")
-         [Stage 2] bill upload → server → BullMQ/Redis → worker → docling-serve (private) → extracted fields to confirm
-background: permitted sources (Crawlee) / manual entry → pending → human review → versioned publication
+browser ── {base}/index.html + assets          (React, TanStack Form + Table; service worker for offline)
+        ├─ {base}/api/v1/postcode/<OUT>.json    OS Code-Point Open, 1.75M GB postcodes chunked per outward code
+        ├─ {base}/api/v1/catalogue/current.json reviewed, versioned offers (v0 = nothing published -> honest empty state)
+        ├─ {base}/api/v1/providers.json + handoff.json   provider sites; approved handoff links only (none = plain links)
+        ├─ {base}/api/v1/guides/*.json          guides + client-side search
+        ├─ {base}/vendor/pdfjs/                 self-hosted pdf.js: bills read on the device, never uploaded
+        └─ in-browser engine                    zod validation + dinero.js integer pence; localStorage for saved comparisons
+build time only (GitHub Actions): stage Code-Point Open + provider link checks -> vite build -> scripts/build-static.mjs
 ```
 
-**Live (static GitHub Pages build, same engine):** https://blockchains.github.io/onetouchswitch/ · API catalogue https://blockchains.github.io/onetouchswitch/api/v1/index.json
+## What works (all client-side)
+
+| Feature | How |
+|---|---|
+| Postcode lookup | Fetches one small static file per outward code from this site. "Keep HU postcodes on this device" caches a whole area for offline use. |
+| NI, Jersey, Guernsey, Isle of Man | Recognised by postcode format with the right notice. You can still compare quotes. |
+| Manual address | Fallback when a postcode isn't found, or optional. Tidied in the browser and labelled "not verified". Never stored. |
+| Offer catalogue | Versioned JSON, human-reviewed (`npm run review`). Empty means an honest empty state plus the "Add a quote you've been given" form. |
+| Costing | Deterministic engine in the browser: in-contract £ rises, upfront fees, exit fees, out-of-contract price, and cashback shown but never deducted. |
+| Results UI | TanStack Table: sortable, shortlist ☆ with View all / Shortlist, monthly breakdown per row, "vs staying", exit-fee column, comparison period (longest / 12 / 18 / 24 / 36 months). Edit costs on any offer or quote. No email gate. |
+| Notices | Availability (always), KCOM (Hull and East Riding), Northern Ireland, crown dependencies, social tariff. |
+| Provider links | "Check availability with {Provider}". Only `config/handoff.json` entries Ismail approved become tracked links, with a disclosure. None approved means plain links to the provider website. We never place orders. |
+| Bill reading | PDF or text bill read **on the device** with self-hosted pdf.js. You see each extracted field with the line it came from, and confirm or correct it. Paste text or type values; manual entry is equally first-class. |
+| Guides and search | 12 Markdown guides, built into JSON for the app plus plain HTML pages. Search runs in the browser. |
+| Saved comparisons | localStorage on the device: outward code and your numbers only, never the address or full postcode. Open and delete in "Saved". |
+| Offline | A service worker caches the app, engine, catalogue, guides, pdf.js and postcode files you use. Tested by killing the server and setting the browser offline. |
+
+**Deferred (not required):** OCR for photos and scanned bills. It is too heavy for a static page, so the manual-entry form is the equivalent. A private Docling service could be added later as an **optional** enhancement; nothing depends on it. Address-level availability needs licensed data (Stage 4).
+
+**Partner/stablecoin bridge:** a separate, optional app, [Blockchains/onetouchswitch-bridge](https://github.com/Blockchains/onetouchswitch-bridge). The consumer app only links to it in the footer, never fetches from it, and works without it.
 
 ## Run it
 
 ```bash
 npm ci
-npm run stage            # ONLINE once: OS Code-Point Open (1.7M GB postcodes, OGL) + provider link checks -> data/
-npx vite build && npm start   # http://127.0.0.1:8787  (everything after staging works offline)
-npm test                 # unit tests (offline)
-npx playwright test      # 4 journeys: server+fixture catalogue, server+empty catalogue, static build, engine import
-docker compose up app    # self-hosted; add --profile bills | postcodes | libpostal for optional services
+npm run stage     # build time, ONLINE once: OS Code-Point Open + provider link checks -> data/
+npm run build     # -> site/ (app, engine, postcode chunks, guides, pdf.js, sw.js)
+npm run preview   # http://127.0.0.1:8797/onetouchswitch/  (a plain static file server; any static host works)
+npm test && npx playwright test   # passes with the network disabled; see CI
+npm run check:deps                 # fails if the build gains any external runtime dependency
 ```
 
-## API (server)
-
-| Method | Path | Notes |
-|---|---|---|
-| GET | `/api/health` | data versions, enabled services |
-| GET | `/api/location/postcode?postcode=` | local lookup → district, ward, country, caveats |
-| POST | `/api/address/normalise` | `{line1,line2,town,postcode}` → tidy form, `verified:false` |
-| GET | `/api/providers` | directory of provider websites (link-checked at staging) |
-| GET | `/api/offers?postcode=` | published, area-filtered catalogue offers + caveats |
-| POST | `/api/compare` | `{start, current?, offer_ids[], quotes[]}` → deterministic ranked totals |
-| POST/GET | `/api/sessions[/:id]` | stored comparison record (outward code only, no address) |
-| GET | `/api/handoff/:provider` | 302 to the provider, **only** for providers approved in `config/handoff.json` (empty by default) |
-| POST/GET | `/api/bills[/:id]` | Stage 2. Returns 503 unless `BILLS_ENABLED=1` and `REDIS_URL` are set |
-
-Static equivalents for touch.grok.me: see [docs/INTEGRATION.md](docs/INTEGRATION.md).
+Host at a domain root (e.g. touch.grok.me) with `VITE_BASE=/ PAGES_URL=https://touch.grok.me npm run build`, and upload `site/` as-is.
 
 ## Honesty rules (enforced in code and tests)
-- Offers only reach customers after human review and versioned publication (`npm run review`). The production catalogue is **empty** until offers are approved.
+- Offers reach customers only after human review and versioned publication. The production catalogue is **empty** until Ismail approves offers.
 - Every offer shows "Published offer. Check availability with the provider."
-- No orderability, no "available at your address", and no autonomous orders.
-- Cashback is shown but never deducted from cost.
+- No orderability claims, no "available at your address", and no orders placed for you. Cashback is never deducted.
 
-Stages: [docs/STAGES.md](docs/STAGES.md) · Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · Agents: [AGENTS.md](AGENTS.md)
+Integration: [docs/INTEGRATION.md](docs/INTEGRATION.md) · Stages: [docs/STAGES.md](docs/STAGES.md) · Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · Agents: [AGENTS.md](AGENTS.md)
 
-Postcode data: Contains OS data © Crown copyright and database right; Royal Mail data © Royal Mail copyright and database right; National Statistics data © Crown copyright and database right (Open Government Licence v3.0). Code: MIT.
+Postcode data: Contains OS data © Crown copyright and database right; Royal Mail data © Royal Mail copyright and database right; National Statistics data © Crown copyright and database right (Open Government Licence v3.0). pdf.js: Apache-2.0. Code: MIT.

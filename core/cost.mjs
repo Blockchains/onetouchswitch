@@ -61,6 +61,8 @@ export function costDeal(deal, start, horizon) {
     upfront_pence: d.upfront_pence, cashback_pence: d.cashback_pence,
     cashback_note: d.cashback_pence ? `Cashback/reward of ${fmt(gbp(d.cashback_pence))} not deducted: it is not a price and often has claim conditions.` : null,
     download_mbps: d.download_mbps ?? null,
+    months_beyond_contract: Math.max(0, h - d.contract_months),
+    beyond_contract_note: h > d.contract_months ? `This deal's contract is ${d.contract_months} months. For the other ${h - d.contract_months} months of the comparison period we assume the last contract price continues; the provider may charge more once the contract ends.` : null,
     schedule: sched,
   };
 }

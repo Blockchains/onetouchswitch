@@ -1,0 +1,8 @@
+{
+ "note": "TEST FIXTURE ONLY. Served by the test static server to prove approved handoff links render and invalid ones are ignored. Never deployed.",
+ "approved": [
+  { "provider_id": "bt", "url": "https://www.bt.com/broadband?ref=TEST-FIXTURE", "approved_by": "TEST FIXTURE", "approved_at": "2026-10-11", "disclosure": "TEST FIXTURE: we may be paid if you sign up through this link." },
+  { "provider_id": "kcom", "url": "http://insecure.example/kcom", "approved_by": "TEST FIXTURE", "approved_at": "2026-10-11" },
+  { "provider_id": "sky", "url": "https://www.sky.com/?ref=unapproved" }
+ ]
+}

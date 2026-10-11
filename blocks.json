@@ -3,38 +3,139 @@
   "schema_version": "1.0",
   "name": "onetouchswitch",
   "repo": "Blockchains/onetouchswitch",
-  "summary": "Local-first, self-hostable UK broadband comparison core for onetouchswitch.com: OS Code-Point Open postcodes, manual address, reviewed versioned offer catalogue, deterministic dinero.js cost engine, caveats, provider links, session records, Stage-2 Docling bill queue. Static Pages build + ESM engine.",
-  "kind": ["web-app", "http-api", "library", "dataset"],
+  "summary": "Static-only UK broadband comparison for onetouchswitch.com, running on GitHub Pages with client-side JS: OS Code-Point Open postcode chunks, manual address, reviewed versioned catalogue with honest empty state, deterministic dinero.js engine in the browser, TanStack form/table (shortlist, edit costs, comparison period), notices, approved-link-only handoff, guides with search, localStorage saved comparisons, in-browser PDF bill reading, offline service worker. No runtime server or third-party API.",
+  "kind": [
+    "web-app",
+    "library",
+    "dataset"
+  ],
   "stability": "beta",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "homepage": "https://blockchains.github.io/onetouchswitch/",
   "entrypoints": [
-    { "type": "web", "name": "static comparison app", "ref": "https://blockchains.github.io/onetouchswitch/" },
-    { "type": "http", "name": "GET /api/v1/postcode/{OUTWARD}.json", "ref": "https://blockchains.github.io/onetouchswitch/api/v1/postcode/HU1.json", "usage": "rows [postcode, country_code, district_code, ward_code] + names" },
-    { "type": "http", "name": "GET /api/v1/index.json", "ref": "https://blockchains.github.io/onetouchswitch/api/v1/index.json" },
-    { "type": "browser-script", "name": "ots-engine.mjs", "ref": "https://blockchains.github.io/onetouchswitch/engine/v1/ots-engine.mjs", "usage": "const { OTSStatic } = await import(url)", "exports": ["OTSStatic", "OFFER_COPY", "normalisePostcode", "caveatsFor"] },
-    { "type": "docker", "name": "self-hosted server", "ref": "docker-compose.yml", "usage": "npm run stage && docker compose up app" },
-    { "type": "cli", "name": "review", "ref": "scripts/review.mjs", "usage": "npm run review -- list|add|approve|reject|publish" }
+    {
+      "type": "web",
+      "name": "static comparison app",
+      "ref": "https://blockchains.github.io/onetouchswitch/"
+    },
+    {
+      "type": "http",
+      "name": "GET /api/v1/postcode/{OUTWARD}.json",
+      "ref": "https://blockchains.github.io/onetouchswitch/api/v1/postcode/HU1.json",
+      "usage": "rows [postcode, country_code, district_code, ward_code] + names"
+    },
+    {
+      "type": "http",
+      "name": "GET /api/v1/index.json",
+      "ref": "https://blockchains.github.io/onetouchswitch/api/v1/index.json"
+    },
+    {
+      "type": "http",
+      "name": "GET /api/v1/guides/index.json",
+      "ref": "https://blockchains.github.io/onetouchswitch/api/v1/guides/index.json"
+    },
+    {
+      "type": "browser-script",
+      "name": "ots-engine.mjs",
+      "ref": "https://blockchains.github.io/onetouchswitch/engine/v1/ots-engine.mjs",
+      "usage": "const { OTSStatic } = await import(url)",
+      "exports": [
+        "OTSStatic",
+        "OFFER_COPY",
+        "UNAVAILABLE",
+        "normalisePostcode",
+        "caveatsFor",
+        "extractBill",
+        "searchGuides",
+        "SavedStore"
+      ]
+    },
+    {
+      "type": "cli",
+      "name": "review",
+      "ref": "scripts/review.mjs",
+      "usage": "npm run review -- list|add|approve|reject|publish"
+    }
   ],
   "inputs": [
-    { "name": "postcode", "type": "string" },
-    { "name": "manual address", "type": "object" },
-    { "name": "current deal + quotes", "type": "object" },
-    { "name": "bill PDF/image (Stage 2)", "type": "file" }
+    {
+      "name": "postcode",
+      "type": "string"
+    },
+    {
+      "name": "manual address",
+      "type": "object"
+    },
+    {
+      "name": "current deal + quotes",
+      "type": "object"
+    },
+    {
+      "name": "bill PDF/text (read in browser)",
+      "type": "file"
+    }
   ],
   "outputs": [
-    { "name": "location + caveats", "type": "json" },
-    { "name": "ranked contract-cost comparison", "type": "json" },
-    { "name": "session record", "type": "json" }
+    {
+      "name": "location + notices",
+      "type": "json"
+    },
+    {
+      "name": "ranked contract-cost comparison",
+      "type": "json"
+    },
+    {
+      "name": "saved comparison (localStorage)",
+      "type": "json"
+    }
   ],
-  "deps": ["node>=22", "unzip (staging)", "optional: redis, docling-serve, postcodes.io, libpostal"],
+  "deps": [
+    "runtime: none (static files on the same origin)",
+    "build: node>=22, unzip"
+  ],
   "compatible_with": [
-    { "repo": "Blockchains/onetouchswitch-bridge", "how": "B2B partner-payout data (GBP/USD, stablecoin rails) for /for-partners; separate from consumer comparison" },
-    { "repo": "Blockchains/onetouchswitch.com", "how": "backup mirror of the live site" },
-    { "repo": "Blockchains/sites-monitor", "how": "uptime/SEO monitoring of onetouchswitch.com" }
+    {
+      "repo": "Blockchains/onetouchswitch-bridge",
+      "how": "B2B partner-payout data (GBP/USD, stablecoin rails) for /for-partners; separate from consumer comparison"
+    },
+    {
+      "repo": "Blockchains/onetouchswitch.com",
+      "how": "backup mirror of the live site"
+    },
+    {
+      "repo": "Blockchains/sites-monitor",
+      "how": "uptime/SEO monitoring of onetouchswitch.com"
+    }
   ],
-  "tests": { "command": "npm test && npx playwright test", "ci": ".github/workflows/ci.yml", "network": false },
-  "docs": { "readme": "README.md", "agents": "AGENTS.md", "llms": "llms.txt", "extra": ["docs/INTEGRATION.md", "docs/STAGES.md", "docs/ARCHITECTURE.md"] },
-  "tags": ["onetouchswitch", "broadband", "uk", "comparison", "postcodes", "code-point-open", "dinero", "tanstack", "bullmq", "docling", "playwright", "local-first"]
+  "tests": {
+    "command": "npm test && npx playwright test",
+    "ci": ".github/workflows/ci.yml",
+    "network": false
+  },
+  "docs": {
+    "readme": "README.md",
+    "agents": "AGENTS.md",
+    "llms": "llms.txt",
+    "extra": [
+      "docs/INTEGRATION.md",
+      "docs/STAGES.md",
+      "docs/ARCHITECTURE.md"
+    ]
+  },
+  "tags": [
+    "onetouchswitch",
+    "broadband",
+    "uk",
+    "comparison",
+    "postcodes",
+    "code-point-open",
+    "dinero",
+    "tanstack",
+    "pdfjs",
+    "service-worker",
+    "offline",
+    "github-pages",
+    "static"
+  ]
 }

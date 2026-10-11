@@ -1,31 +1,36 @@
 # Wiring touch.grok.me / onetouchswitch.com
 
-Two options. Both are keyless, read-only and deterministic.
+touch.grok.me loads **only** the Pages engine and assets. There is no other API, key, server or third-party call. These are the same files github.io serves.
 
-## A. Static (live now on GitHub Pages)
-`BASE = https://blockchains.github.io/onetouchswitch` (env `VITE_OTS_COMPARE_BASE`)
-
-| Need | Call |
-|---|---|
-| Postcode → area | `GET ${BASE}/api/v1/postcode/{OUTWARD}.json`, then find the row `[postcode, country_code, district_code, ward_code]`; names are in `names` |
-| Providers | `GET ${BASE}/api/v1/providers.json` |
-| Published offers | `GET ${BASE}/api/v1/catalogue/current.json` (`version` 0 = nothing published yet) |
-| Everything above + cost engine | `const m = await import("${BASE}/engine/v1/ots-engine.mjs"); const c = new m.OTSStatic(BASE + "/")` |
+`BASE = https://blockchains.github.io/onetouchswitch` (env `VITE_OTS_COMPARE_BASE`). CORS is `*` on GitHub Pages.
 
 ```js
 const BASE = import.meta.env.VITE_OTS_COMPARE_BASE ?? "https://blockchains.github.io/onetouchswitch";
-const { OTSStatic, OFFER_COPY } = await import(/* @vite-ignore */ `${BASE}/engine/v1/ots-engine.mjs`);
+const { OTSStatic, OFFER_COPY, UNAVAILABLE } = await import(/* @vite-ignore */ `${BASE}/engine/v1/ots-engine.mjs`);
 const ots = new OTSStatic(BASE + "/");
-const area = await ots.offers("HU1 1AA");          // { location, caveats[], offers[], empty_reason }
-const res  = await ots.compare({ start: "2026-10", current: { monthly_pence: 2500, out_of_contract_monthly_pence: 4500, months_left: 0, exit_fee_pence: 0 },
-                                 offer_ids: area.offers.map(o => o.id), quotes: [{ label: "Quote", monthly_pence: 2200, contract_months: 24 }] });
-// res.results[]: rank, label, total, switch_total, vs_stay, copy, provider{name,url}
+const area = await ots.offers("HU1 1AA");            // { location, caveats[], offers[], empty_reason, catalogue_version } or { error }
+const manual = await ots.offers(ots.manualLocation({ line1, line2, town, postcode }));   // postcode not found
+const none = await ots.offers(null);                 // continue without a postcode
+const res = await ots.compare({ start: "2026-10", horizon_months: 24, current: { monthly_pence: 2500, out_of_contract_monthly_pence: 4500, months_left: 0, exit_fee_pence: 0 },
+                                offer_ids: area.offers.map(o => o.id), quotes: [{ label: "Quote", monthly_pence: 2200, contract_months: 24 }] });
+const guides = await ots.searchGuides("exit fee");   // [{slug,title,summary}], then ots.guide(slug) -> {title, html}
+const bill = await ots.readBill(file);               // PDF/text read on the device -> { fields, evidence, missing, note }
+ots.saved.save(res, request, { outward: area.location.outward });   // localStorage, outward only
+await ots.keepAreaOffline("HU");                     // pre-fetch postcode files for offline use
 ```
 
-## B. Self-hosted server
-Deploy with `docker compose up app` (after `npm run stage`), then call the `/api/*` routes in the README. Set `VITE_OTS_COMPARE_API` to its origin and enable CORS at the proxy.
+| Need | Static file |
+|---|---|
+| Postcode → area | `${BASE}/api/v1/postcode/{OUTWARD}.json`, with rows `[postcode, country_code, district_code, ward_code]` and `names` |
+| Area → outward codes | `${BASE}/api/v1/postcode/areas.json` |
+| Providers / approved handoff | `${BASE}/api/v1/providers.json`, `${BASE}/api/v1/handoff.json` (`approved: []` means plain links) |
+| Published offers | `${BASE}/api/v1/catalogue/current.json` (`version` 0 = nothing published) and `vN.json` |
+| Guides | `${BASE}/api/v1/guides/index.json`, `${BASE}/api/v1/guides/{slug}.json`, HTML at `${BASE}/guides/{slug}/` |
+| pdf.js (bill reading) | `${BASE}/vendor/pdfjs/` (loaded by the engine; a cross-origin worker is handled by pdf.js) |
+
+Alternatively, host the whole static bundle on touch.grok.me itself: `VITE_BASE=/ PAGES_URL=https://touch.grok.me npm run build` and serve `site/`.
 
 ## UX copy rules (must keep)
 - Every catalogue offer: **"Published offer. Check availability with the provider."**
-- Never say "available at your address", "order now" or "we'll switch you". Provider links read "Check availability with {Provider}".
-- If a fetch fails or nothing is published, show the `empty_reason` text and the "add a quote" form. Never invent offers.
+- Never say "available at your address", "order now", "buy now", "switch now" or "we'll switch you". Provider links read "Check availability with {Provider}".
+- If an engine call throws or times out, show `UNAVAILABLE` ("Live comparison is unavailable right now. Please try again shortly.") and no numbers. If nothing is published, show `empty_reason` and the "add a quote" form. Never invent offers.
