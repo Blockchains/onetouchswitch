@@ -1,4 +1,4 @@
-// Production Pages build (researched catalogue v1; no handoffs approved). Everything runs from static files + the in-browser engine.
+// Production Pages build (researched catalogue v2, Ismail-approved; no handoffs approved). Everything runs from static files + the in-browser engine.
 import { test, expect } from "@playwright/test";
 import { guardOrigin, findArea, addQuote } from "./helpers.mjs";
 const ORIGIN = "http://127.0.0.1:8797";
@@ -143,9 +143,9 @@ test("published catalogue: provider filter, full offer details, cost several rea
   await page.goto("/onetouchswitch/");
   await findArea(page, "HU1 1AA");
   const offers = page.getByTestId("offers");
-  await expect(page.getByTestId("catalogue-meta")).toContainText("Catalogue v1");
+  await expect(page.getByTestId("catalogue-meta")).toContainText("Catalogue v2");
   await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("£30.99/month");
-  await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("reviewer:");
+  await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("reviewer: Ismail Malik");
   await expect(offers.locator("li[data-offer=bt-full-fibre-300] a", { hasText: "source" })).toHaveAttribute("href", "https://www.bt.com/broadband/deals");
   await expect(offers.locator("li[data-offer=bt-home-essentials] input[type=checkbox]")).toBeDisabled();
   await expect(offers.locator("li[data-offer=bt-home-essentials]")).toContainText("price not published");

@@ -65,13 +65,13 @@
   "review_flags": [
    "exit_fee_pence"
   ],
-  "needs_review": true,
+  "needs_review": false,
   "costable": true
  },
  "review": {
-  "reviewer": "Grok Bot research agent (for Ismail Malik)",
-  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "reviewer": "Ismail Malik",
+  "reviewed_at": "2026-10-11T20:41:24.382Z",
   "decision": "approved",
-  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+  "note": "Signed off for live publication. Null fields remain null; no exit fees invented. review_flags still list what each provider page did not state."
  }
 }

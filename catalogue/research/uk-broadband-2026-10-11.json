@@ -44,7 +44,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -88,7 +88,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -132,7 +132,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -176,7 +176,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -220,7 +220,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -264,7 +264,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -307,7 +307,7 @@
     "upload_mbps",
     "upfront_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -349,7 +349,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -391,7 +391,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -433,7 +433,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -475,7 +475,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -516,7 +516,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -557,7 +557,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -598,7 +598,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -642,7 +642,7 @@
     "annual_rise_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -689,7 +689,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -736,7 +736,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -783,7 +783,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -826,7 +826,7 @@
     "exit_fee_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -871,7 +871,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -911,7 +911,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -963,7 +963,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -1015,7 +1015,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -1067,7 +1067,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -1119,7 +1119,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -1172,7 +1172,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -1213,7 +1213,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1277,7 +1277,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1341,7 +1341,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1405,7 +1405,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1469,7 +1469,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1533,7 +1533,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1574,7 +1574,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1615,7 +1615,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1655,7 +1655,7 @@
     "exit_fee_pence",
     "upfront_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1701,7 +1701,7 @@
     "annual_rise_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1747,7 +1747,7 @@
     "annual_rise_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1793,7 +1793,7 @@
     "annual_rise_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1837,7 +1837,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1881,7 +1881,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1925,7 +1925,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -1969,7 +1969,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2038,7 +2038,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2107,7 +2107,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2176,7 +2176,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2240,7 +2240,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2304,7 +2304,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2368,7 +2368,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2410,7 +2410,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2452,7 +2452,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2494,7 +2494,7 @@
    "review_flags": [
     "exit_fee_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2541,7 +2541,7 @@
     "exit_fee_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2588,7 +2588,7 @@
     "exit_fee_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2635,7 +2635,7 @@
     "exit_fee_pence",
     "upload_mbps"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2683,7 +2683,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2730,7 +2730,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2777,7 +2777,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2824,7 +2824,7 @@
     "exit_fee_pence",
     "annual_rise_pence"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2872,7 +2872,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   },
   {
@@ -2918,7 +2918,7 @@
     "upload_mbps",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": true
   },
   {
@@ -2966,7 +2966,7 @@
     "upfront_pence",
     "price_is_from"
    ],
-   "needs_review": true,
+   "needs_review": false,
    "costable": false
   }
  ]

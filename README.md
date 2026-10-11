@@ -55,7 +55,7 @@ npm run check:deps                 # fails if the build gains any external runti
 Host at a domain root (e.g. touch.grok.me) with `VITE_BASE=/ PAGES_URL=https://touch.grok.me npm run build`, and upload `site/` as-is.
 
 ## Honesty rules (enforced in code and tests)
-- Offers reach customers only through versioned publication with a named reviewer. v1 (2026-10-11) was researched from provider pages at Ismail's request, and the reviewer field says so. Each `needs_review` offer lists the fields its page did not state. Refresh: add a new dated research file, then run `node scripts/import-research.mjs <file> --reviewer "<name>"`.
+- Offers reach customers only through versioned publication with a named reviewer. v2 (2026-10-11) is live with reviewer Ismail Malik: 61 offers, `needs_review` cleared, null fields left null (no invented exit fees). `review_flags` still list what each provider page did not state. Refresh: add a new dated research file, then run `node scripts/import-research.mjs <file> --reviewer "<name>"`.
 - Every offer shows "Published offer. Check availability with the provider."
 - No orderability claims, no "available at your address", and no orders placed for you. Cashback is never deducted.
 

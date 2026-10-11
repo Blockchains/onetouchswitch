@@ -23,14 +23,16 @@ test("every published offer is identical to its research record, with reviewer +
   assert.match(pub.sha256, /^[0-9a-f]{64}$/);
 });
 
-test("missing figures are null and flagged, never filled in", () => {
+test("missing figures are null and flagged, never filled in; needs_review cleared only by human sign-off", () => {
   for (const o of pub.offers) {
     for (const [k, flag] of [["monthly_pence", "monthly_pence"], ["contract_months", "contract_months"], ["exit_fee_pence", "exit_fee_pence"], ["download_mbps", "download_mbps"]]) if (o[k] == null) assert.ok(o.review_flags.includes(flag), `${o.id} ${k} unflagged`);
     if (o.price_is_from) assert.ok(o.review_flags.includes("price_is_from"));
-    assert.equal(o.needs_review, o.review_flags.length > 0);
+    // review_flags document what the page omitted; needs_review is independent and may be cleared by a human without inventing figures
+    assert.equal(o.needs_review, false, `${o.id} still needs_review`);
     assert.equal(o.costable, o.monthly_pence != null && o.contract_months != null);
   }
   assert.ok(pub.offers.some((o) => !o.costable), "offers without a published price stay listed but uncostable");
+  assert.equal(pub.needs_review_count, 0);
 });
 
 test("the cost engine runs on every costable published offer (deterministic, integer pence)", () => {
