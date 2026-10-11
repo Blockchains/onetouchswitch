@@ -34,13 +34,13 @@ function OfferList({ offers, version, publishedAt, selected, onToggle, onEdit })
         {o.intro_months ? ` (first ${o.intro_months} months ${fmt(o.intro_pence)})` : ""}
         {", "}{o.contract_months ? `${o.contract_months} month${o.contract_months > 1 ? "s" : ""}` : "contract length not stated"}
         {o.upfront_pence ? `, ${fmt(o.upfront_pence)} upfront` : ""}{o.annual_rise_pence ? `, +${fmt(o.annual_rise_pence)}/month each year` : ""}
-        {o.social_tariff ? <> <span className="pill">Social tariff</span></> : null}{o.needs_review ? <> <span className="pill warn" title={(o.review_flags ?? []).map((f) => missing[f] ?? f).join(", ")}>Needs review</span></> : null}</label>
+        {o.social_tariff ? <> <span className="pill">Social tariff</span></> : null}</label>
       <div className="mut">{speed(o)}{o.speed_note ? ` (${o.speed_note})` : ""}{o.technology ? ` · ${o.technology}` : ""}</div>
       {o.rise_rule ? <div className="mut">Price changes: {o.rise_rule}</div> : null}
       {o.exit_fee_pence != null || o.exit_fee_rule ? <div className="mut">Exit fee: {o.exit_fee_pence != null ? fmt(o.exit_fee_pence) : ""}{o.exit_fee_rule ? ` ${o.exit_fee_rule}` : ""}</div> : null}
       {o.one_off_fees?.length ? <div className="mut">One-off: {o.one_off_fees.map((f) => `${f.label} ${f.pence == null ? "not stated" : fmt(f.pence)}`).join("; ")}</div> : null}
       {o.eligibility_notes ? <div className="mut">{o.eligibility_notes}</div> : null}
-      {o.needs_review ? <div className="mut" data-testid="review-flags">Not on the provider's page: {(o.review_flags ?? []).map((f) => missing[f] ?? f).join(", ")}.</div> : null}
+      {(o.review_flags ?? []).length ? <div className="mut" data-testid="review-flags">Not on the provider's page: {(o.review_flags ?? []).map((f) => missing[f] ?? f).join(", ")}.</div> : null}
       {!canCost(o) ? <div className="mut">Can't be costed until the provider publishes a price and contract length. Use "Edit costs" with the figures you're quoted.</div> : null}
       <div className="copy">{o.copy}</div>
       <div className="mut">Seen {(o.retrieved_at ?? o.observed_at).slice(0, 10)} at <a href={o.source_url} rel="nofollow noopener" target="_blank">source</a>{o.reviewed_by ? ` · reviewer: ${o.reviewed_by}` : ""} · catalogue v{version} · <button type="button" className="link" onClick={() => onEdit(o)}>Edit costs</button></div></li>))}</ul>

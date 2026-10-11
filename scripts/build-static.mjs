@@ -1,5 +1,5 @@
 // Builds everything the static app needs under ./site from STAGED local data (no network):
-//   api/v1/postcode/<OUTWARD>.json + areas.json, providers.json, handoff.json, catalogue/current.json + vN.json,
+//   api/v1/postcode/<OUTWARD>.json + areas.json, providers.json, handoff.json, catalogue/current.json + live-approved vN.json (needs_review cleared; draft versions not served),
 //   guides (JSON for the app + plain HTML pages), self-hosted pdf.js, service worker (offline), index.json.
 // Run after `npm run stage` and the two vite builds.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, cpSync, statSync } from "node:fs";
@@ -38,12 +38,17 @@ const ids = new Set(prov.providers.map((p) => p.id));
 const approved = (ho.approved ?? []).filter((x) => ids.has(x.provider_id) && /^https:\/\//.test(x.url ?? "") && x.approved_by && x.approved_at).map(({ provider_id, url, approved_by, approved_at, disclosure }) => ({ provider_id, url, approved_by, approved_at, disclosure: disclosure ?? "We may be paid if you sign up through this link. It does not change our ranking." }));
 J(join(API, "handoff.json"), { note: "Provider links approved by Ismail. Empty = we only link to provider websites. A link is never an order.", approved }, true);
 
-// 3. Catalogue: every published immutable version + current.
+// 3. Catalogue: current + only live-approved immutable versions (needs_review cleared). Draft / needs_review versions stay in git under catalogue/published/ but are not served on Pages.
 const pubDir = join(process.env.OTS_CATALOGUE_DIR ?? join(ROOT, "catalogue"), "published");
+const isLive = (doc) => (doc.needs_review_count ?? 0) === 0 && !(doc.offers ?? []).some((o) => o.needs_review);
 let cat = { version: 0, published_at: null, offer_count: 0, offers: [] };
 if (existsSync(join(pubDir, "current.json"))) {
-  for (const f of readdirSync(pubDir).filter((f) => /^v\d+\.json$/.test(f))) cpSync(join(pubDir, f), join(API, "catalogue", f));
   cat = JSON.parse(readFileSync(join(pubDir, `v${JSON.parse(readFileSync(join(pubDir, "current.json"), "utf8")).version}.json`), "utf8"));
+  if (!isLive(cat)) throw new Error(`Refuse to publish catalogue v${cat.version}: still has needs_review / draft flags`);
+  for (const f of readdirSync(pubDir).filter((f) => /^v\d+\.json$/.test(f))) {
+    const doc = JSON.parse(readFileSync(join(pubDir, f), "utf8"));
+    if (isLive(doc)) cpSync(join(pubDir, f), join(API, "catalogue", f));
+  }
 }
 J(join(API, "catalogue", "current.json"), cat, true);
 
