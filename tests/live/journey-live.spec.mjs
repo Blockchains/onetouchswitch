@@ -52,6 +52,9 @@ test("live journey: HU1 1AA and SW1A 1AA -> real offers -> compare; NI format no
   await mf.getByLabel("Address line 1").fill("1 high street"); await mf.getByLabel("Town").fill("somewhere");
   await mf.getByRole("button", { name: "Continue with this address" }).click();
   await expect(page.getByTestId("address-result")).toContainText("do not verify");
+  await page.goto(`${BASE}guides/exit-fees/`); await expect(page.locator("h1")).toBeVisible();
+  await page.goto(`${BASE}#/guides`); await expect(page.getByTestId("guide-list")).toBeVisible();
+  await page.waitForTimeout(1000);
   expect(bad).toEqual([]);
   done();
 });
