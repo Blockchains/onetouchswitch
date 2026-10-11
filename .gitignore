@@ -1,0 +1,8 @@
+node_modules/
+data/
+!data/.gitkeep
+web/dist/
+test-results/
+playwright-report/
+*.done
+site/

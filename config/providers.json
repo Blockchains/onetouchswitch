@@ -1,0 +1,26 @@
+{
+  "note": "Directory of UK broadband retailers with their official websites. Staging checks every URL and records status. Inclusion is not an endorsement or an availability claim.",
+  "providers": [
+    { "id": "bt", "name": "BT", "url": "https://www.bt.com/broadband" },
+    { "id": "sky", "name": "Sky", "url": "https://www.sky.com/broadband" },
+    { "id": "virgin-media", "name": "Virgin Media", "url": "https://www.virginmedia.com/broadband" },
+    { "id": "talktalk", "name": "TalkTalk", "url": "https://www.talktalk.co.uk/" },
+    { "id": "vodafone", "name": "Vodafone", "url": "https://www.vodafone.co.uk/broadband" },
+    { "id": "ee", "name": "EE", "url": "https://ee.co.uk/broadband" },
+    { "id": "plusnet", "name": "Plusnet", "url": "https://www.plus.net/broadband/" },
+    { "id": "now", "name": "NOW Broadband", "url": "https://www.nowtv.com/broadband" },
+    { "id": "three", "name": "Three", "url": "https://www.three.co.uk/broadband" },
+    { "id": "utility-warehouse", "name": "Utility Warehouse", "url": "https://uw.co.uk/broadband" },
+    { "id": "hyperoptic", "name": "Hyperoptic", "url": "https://www.hyperoptic.com/" },
+    { "id": "community-fibre", "name": "Community Fibre", "url": "https://communityfibre.co.uk/", "areas": ["E","EC","N","NW","SE","SW","W","WC","BR","CR","DA","EN","HA","IG","KT","RM","SM","TW","UB"] },
+    { "id": "zen", "name": "Zen Internet", "url": "https://www.zen.co.uk/broadband" },
+    { "id": "cuckoo", "name": "Cuckoo", "url": "https://cuckoo.co/" },
+    { "id": "youfibre", "name": "YouFibre (incl. brsk)", "url": "https://www.youfibre.com/" },
+    { "id": "trooli", "name": "Trooli", "url": "https://www.trooli.com/" },
+    { "id": "gigaclear", "name": "Gigaclear", "url": "https://www.gigaclear.com/" },
+    { "id": "kcom", "name": "KCOM", "url": "https://www.kcom.com/home/packages/", "districts": ["E06000010","E06000011"] },
+    { "id": "lit-fibre", "name": "Lit Fibre", "url": "https://www.litfibre.com/" },
+    { "id": "g-network", "name": "G.Network", "url": "https://www.g.network/" },
+    { "id": "toob", "name": "toob", "url": "https://www.toob.co.uk/" }
+  ]
+}

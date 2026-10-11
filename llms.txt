@@ -1,0 +1,17 @@
+# onetouchswitch (comparison platform)
+
+> Local-first, self-hostable UK broadband comparison core for onetouchswitch.com: local postcode data (OS Code-Point Open), manual address, reviewed versioned offer catalogue, deterministic contract-cost engine, provider links with the copy "Published offer. Check availability with the provider." No orderability claims.
+
+## Live static API
+- [Catalogue](https://blockchains.github.io/onetouchswitch/api/v1/index.json)
+- [Postcode file example HU1](https://blockchains.github.io/onetouchswitch/api/v1/postcode/HU1.json)
+- [Providers](https://blockchains.github.io/onetouchswitch/api/v1/providers.json)
+- [Published offers](https://blockchains.github.io/onetouchswitch/api/v1/catalogue/current.json)
+- [Engine (ESM)](https://blockchains.github.io/onetouchswitch/engine/v1/ots-engine.mjs)
+- [Demo](https://blockchains.github.io/onetouchswitch/)
+
+## Docs
+- [README](https://github.com/Blockchains/onetouchswitch/blob/main/README.md)
+- [Integration](https://github.com/Blockchains/onetouchswitch/blob/main/docs/INTEGRATION.md)
+- [Stages](https://github.com/Blockchains/onetouchswitch/blob/main/docs/STAGES.md)
+- [Architecture](https://github.com/Blockchains/onetouchswitch/blob/main/docs/ARCHITECTURE.md)

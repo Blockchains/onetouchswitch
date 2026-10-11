@@ -1,0 +1,8 @@
+TEST FIXTURE — synthetic bill text for parser tests
+Virgin Media
+Your bill for October 2026
+Broadband M250 monthly charge £38.50
+Speed: up to 264Mbps
+Your minimum term ends on 14 March 2027
+Early termination charge if you leave now: £96.00
+Total amount due £41.25

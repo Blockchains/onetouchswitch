@@ -1,0 +1,34 @@
+name: Pages (static comparison + postcode API + engine)
+on:
+  push: { branches: [main] }
+  schedule: [{ cron: "23 5 * * 1" }]   # weekly: re-stage Code-Point Open + provider link checks
+  workflow_dispatch:
+permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci && npm run stage && npm run build:static
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
+  smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set -e; B=https://blockchains.github.io/onetouchswitch
+          c() { curl -sSf --retry 8 --retry-all-errors --retry-delay 10 "$@"; }
+          c "$B/api/v1/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['postcodes']['count']>1500000;print('postcodes',d['postcodes']['count'])"
+          c "$B/api/v1/postcode/HU1.json" | python3 -c "import json,sys;d=json.load(sys.stdin);r=[x for x in d['rows'] if x[0]=='HU1 1AA'][0];assert d['names'][r[2]]=='City of Kingston upon Hull';print('HU1 1AA ok')"
+          c -o /dev/null "$B/engine/v1/ots-engine.mjs" && c -o /dev/null "$B/" && echo ok

@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  secrets:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz | tar xz gitleaks
+          ./gitleaks git --no-banner --redact .
+  offline:
+    name: Stage data online, then unit + Playwright journeys with the network disabled
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Stage local data (OS Code-Point Open + provider link checks)
+        run: npm run stage
+      - name: Build server UI and static (Pages) build
+        run: npx vite build && npm run build:static
+      - name: Run tests inside a network namespace with only loopback
+        run: |
+          sudo unshare -n bash -c 'ip link set lo up && sudo -u "$SUDO_USER" env "PATH=$PATH" "HOME=$HOME" bash -c "node scripts/offline-check.mjs && npm run test:unit && npx playwright test"'
+  docker:
+    name: Docker image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t ots-compare .
+      - run: docker compose config -q

@@ -1,0 +1,41 @@
+{
+  "name": "onetouchswitch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first, self-hosted UK broadband comparison platform for onetouchswitch.com: local postcode data (OS Code-Point Open / self-hosted postcodes.io), manual address, reviewed local offer catalogue, deterministic cost engine, provider handoff links, session records, private bill OCR queue (Docling via BullMQ).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "stage": "node scripts/stage-data.mjs",
+    "build": "vite build",
+    "start": "node server/index.mjs",
+    "worker": "node server/worker.mjs",
+    "review": "node scripts/review.mjs",
+    "test": "npm run test:unit",
+    "test:unit": "node --test --test-concurrency=1 tests/unit/*.test.mjs",
+    "test:e2e": "playwright test",
+    "offline-check": "node scripts/offline-check.mjs",
+    "build:static": "VITE_STATIC=1 vite build && vite build -c vite.engine.config.mjs && node scripts/build-static.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.17",
+    "@tanstack/react-form": "^1.33.5",
+    "@tanstack/react-table": "^8.21.3",
+    "bullmq": "^5.81.5",
+    "dinero.js": "^2.0.2",
+    "exceljs": "^4.4.0",
+    "hono": "^4.13.13",
+    "ioredis": "^5.8.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  },
+  "license": "MIT"
+}

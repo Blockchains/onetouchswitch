@@ -1,0 +1,4 @@
+{
+  "note": "Crawlee collector ONLY visits sources listed here with documented permission (licence, feed agreement or written consent) AND allowed by robots.txt. Empty = collector does nothing.",
+  "sources": []
+}
