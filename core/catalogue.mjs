@@ -1,6 +1,6 @@
 // Local offer catalogue: collected -> pending review -> approved -> versioned publication. Only PUBLISHED offers reach customers.
 import { z } from "zod";
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 
@@ -66,6 +66,14 @@ export class Catalogue {
     if (!existsSync(src)) throw new Error(`No pending offer ${id}`);
     const rec = JSON.parse(readFileSync(src, "utf8")); rec.review = r;
     const dest = join(this.dir, r.decision, `${id}.json`); writeFileSync(dest, JSON.stringify(rec, null, 1)); renameSync(src, src + ".done"); return dest;
+  }
+  /** Withdraw an approved offer (no longer on the provider's page, or can't be verified): moved to rejected/ with the reason.
+   *  The next publish leaves it out; earlier immutable versions are untouched. */
+  withdraw(id, { reviewer, reason, at = new Date().toISOString() }) {
+    const src = join(this.dir, "approved", `${id}.json`); if (!existsSync(src)) throw new Error(`No approved offer ${id}`);
+    if (!reviewer || !reason) throw new Error("withdraw needs reviewer and reason");
+    const rec = JSON.parse(readFileSync(src, "utf8")); rec.review = Review.parse({ reviewer, reviewed_at: at, decision: "rejected", note: `Withdrawn: ${reason}` });
+    writeFileSync(join(this.dir, "rejected", `${id}.json`), JSON.stringify(rec, null, 1)); rmSync(src); return rec;
   }
   /** Publish all approved offers as the next immutable version. */
   publish({ publisher, notes } = {}) {

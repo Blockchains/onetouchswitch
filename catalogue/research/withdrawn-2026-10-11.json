@@ -1,0 +1,13 @@
+{
+ "checked_at": "2026-10-11T21:57:00+01:00",
+ "withdrawn": [
+  {
+   "id": "bt-home-essentials",
+   "reason": "The BT Home Essentials page (https://www.bt.com/broadband/home-essentials) shows no monthly price; an offer with no price is not listed."
+  },
+  {
+   "id": "plusnet-full-fibre-from",
+   "reason": "https://www.plus.net/broadband/ answered HTTP 401 with a reCAPTCHA page to the 2026-10-11 21:57 BST re-check, so the price could not be re-verified from the provider's page."
+  }
+ ]
+}

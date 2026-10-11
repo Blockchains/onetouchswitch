@@ -1,5 +1,5 @@
 // Builds everything the static app needs under ./site from STAGED local data (no network):
-//   api/v1/postcode/<OUTWARD>.json + areas.json, providers.json, handoff.json, catalogue/current.json + live-approved vN.json (needs_review cleared; draft versions not served),
+//   api/v1/postcode/<OUTWARD>.json + areas.json, providers.json, handoff.json, catalogue/current.json + the current vN.json only (superseded/draft versions are not served),
 //   guides (JSON for the app + plain HTML pages), self-hosted pdf.js, service worker (offline), index.json.
 // Run after `npm run stage` and the two vite builds.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, cpSync, statSync } from "node:fs";
@@ -32,7 +32,7 @@ J(join(API, "postcode", "areas.json"), { data_version: meta.version, areas });
 
 // 2. Providers (link-checked directory) and approved handoff links (config/handoff.json; empty = plain links only).
 const prov = JSON.parse(readFileSync(existsSync(join(DATA, "providers.json")) ? join(DATA, "providers.json") : join(ROOT, "config", "providers.json"), "utf8"));
-J(join(API, "providers.json"), { staged_at: prov.staged_at ?? null, note: "Directory of provider websites. Not a list of what is available at your address.", providers: prov.providers.map((p) => ({ id: p.id, name: p.name, url: p.link_check?.final_url ?? p.url, link_ok: p.link_check ? p.link_check.status === 200 : null, districts: p.districts, areas: p.areas })) }, true);
+J(join(API, "providers.json"), { staged_at: prov.staged_at ?? null, note: "Directory of provider websites. Not a list of what is available at your address.", providers: prov.providers.map((p) => ({ id: p.id, name: p.name, url: p.link_check && p.link_check.status !== 200 ? null : (p.link_check?.final_url ?? p.url), link_ok: p.link_check ? p.link_check.status === 200 : null, districts: p.districts, areas: p.areas })) }, true);
 const ho = JSON.parse(readFileSync(process.env.OTS_HANDOFF_FILE ?? join(ROOT, "config", "handoff.json"), "utf8"));
 const ids = new Set(prov.providers.map((p) => p.id));
 const approved = (ho.approved ?? []).filter((x) => ids.has(x.provider_id) && /^https:\/\//.test(x.url ?? "") && x.approved_by && x.approved_at).map(({ provider_id, url, approved_by, approved_at, disclosure }) => ({ provider_id, url, approved_by, approved_at, disclosure: disclosure ?? "We may be paid if you sign up through this link. It does not change our ranking." }));
@@ -45,10 +45,10 @@ let cat = { version: 0, published_at: null, offer_count: 0, offers: [] };
 if (existsSync(join(pubDir, "current.json"))) {
   cat = JSON.parse(readFileSync(join(pubDir, `v${JSON.parse(readFileSync(join(pubDir, "current.json"), "utf8")).version}.json`), "utf8"));
   if (!isLive(cat)) throw new Error(`Refuse to publish catalogue v${cat.version}: still has needs_review / draft flags`);
-  for (const f of readdirSync(pubDir).filter((f) => /^v\d+\.json$/.test(f))) {
-    const doc = JSON.parse(readFileSync(join(pubDir, f), "utf8"));
-    if (isLive(doc)) cpSync(join(pubDir, f), join(API, "catalogue", f));
-  }
+  const bad = cat.offers.filter((o) => o.monthly_pence == null || !/^https:\/\//.test(o.source_url ?? "") || !o.reviewed_by || !o.retrieved_at);
+  if (bad.length) throw new Error(`Refuse to publish catalogue v${cat.version}: offers without a price, https source, reviewer or retrieved date: ${bad.map((o) => o.id).join(", ")}`);
+  // Only the CURRENT version is served. Superseded versions (which may hold withdrawn offers) stay in git, not on Pages.
+  cpSync(join(pubDir, `v${cat.version}.json`), join(API, "catalogue", `v${cat.version}.json`));
 }
 J(join(API, "catalogue", "current.json"), cat, true);
 

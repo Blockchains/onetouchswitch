@@ -30,7 +30,7 @@ export function Results({ data, readOnly = false }) {
     col.display({ id: "exit", header: "Your exit fee", cell: () => (data.stay ? fmt(exitFee) : "—") }),
     col.accessor("switch_total_pence", { header: "Total incl. exit fee", cell: (c) => fmt(c.getValue()) }),
     col.accessor("vs_stay_pence", { header: "vs staying", cell: (c) => vsText(c.getValue()) }),
-    col.display({ id: "provider", header: "Provider", cell: (c) => { const r = c.row.original; const p = r.provider; const name = p?.name ?? r.provider_name; if (!name) return "—"; if (!p) return name;
+    col.display({ id: "provider", header: "Provider", cell: (c) => { const r = c.row.original; const p = r.provider; const name = p?.name ?? r.provider_name; if (!name) return "—"; if (!p || !(p.handoff ?? p.url)) return name;
       return (<><a href={p.handoff ?? p.url} target="_blank" rel="nofollow noopener">Check availability with {p.name}</a>{p.handoff && p.handoff_disclosure ? <div className="mut">{p.handoff_disclosure}</div> : null}</>); } }),
   ], [shortlist, data, readOnly]);
   const rows = useMemo(() => (view === "shortlist" ? data.results.filter((r) => shortlist.has(r.id)) : data.results), [view, shortlist, data]);

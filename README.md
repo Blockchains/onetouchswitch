@@ -12,7 +12,7 @@ The comparison engine and app for **[onetouchswitch.com](https://onetouchswitch.
 ```
 browser ── {base}/index.html + assets          (React, TanStack Form + Table; service worker for offline)
         ├─ {base}/api/v1/postcode/<OUT>.json    OS Code-Point Open, 1.75M GB postcodes chunked per outward code
-        ├─ {base}/api/v1/catalogue/current.json reviewed, versioned offers (v1: 61 offers from 16 providers, researched 2026-10-11)
+        ├─ {base}/api/v1/catalogue/current.json reviewed, versioned offers (v3: 59 offers from 15 providers, re-verified against live provider pages 2026-10-11)
         ├─ {base}/api/v1/providers.json + handoff.json   provider sites; approved handoff links only (none = plain links)
         ├─ {base}/api/v1/guides/*.json          guides + client-side search
         ├─ {base}/vendor/pdfjs/                 self-hosted pdf.js: bills read on the device, never uploaded
@@ -55,7 +55,10 @@ npm run check:deps                 # fails if the build gains any external runti
 Host at a domain root (e.g. touch.grok.me) with `VITE_BASE=/ PAGES_URL=https://touch.grok.me npm run build`, and upload `site/` as-is.
 
 ## Honesty rules (enforced in code and tests)
-- Offers reach customers only through versioned publication with a named reviewer. v2 (2026-10-11) is live with reviewer Ismail Malik: 61 offers, `needs_review` cleared, null fields left null (no invented exit fees). `review_flags` still list what each provider page did not state. Pages serves only live-approved catalogue versions (`needs_review_count === 0`); draft v1 stays in git for audit but is not deployed. Refresh: add a new dated research file, then run `node scripts/import-research.mjs <file> --reviewer "<name>"`.
+- Offers reach customers only through versioned publication with a named reviewer. **v3 (2026-10-11, live)**: every v2 source page was re-rendered at 21:57 BST and each price compared with the live page (`catalogue/research/uk-broadband-2026-10-11-recheck.json`, evidence in `evidence-2026-10-11-recheck/`). 59 offers matched and were kept unchanged; 2 were withdrawn (`catalogue/research/withdrawn-2026-10-11.json`: BT Home Essentials shows no price; plus.net answers automated checks with a reCAPTCHA so the Plusnet price could not be re-verified). Every live offer has a real monthly price; 7 have no contract length on the provider page, so they are listed without a tick box and can be costed only via "Edit costs" with the user's own contract length (never guessed). Null fields stay null (no invented exit fees); `review_flags` list what each page did not state.
+- Pages serves only the **current** catalogue version; superseded versions stay in git but are not deployed. The build refuses to publish an offer without a price, https source, reviewer or retrieved date.
+- Northern Ireland and the Crown dependencies: the catalogue is researched from GB provider pages, so no catalogue offers are shown there (format-only notice; quotes still work).
+- Refresh: add a new dated research file, withdraw anything no longer on the provider page with `node scripts/withdraw.mjs <withdrawals.json> --reviewer "<name>"`, then `node scripts/import-research.mjs <file> --reviewer "<name>"`. `npm run test:live` runs the online journey against the deployed site (also run by the Pages workflow after every deploy).
 - Every offer shows "Published offer. Check availability with the provider."
 - No orderability claims, no "available at your address", and no orders placed for you. Cashback is never deducted.
 

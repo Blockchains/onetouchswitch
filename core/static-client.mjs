@@ -39,7 +39,10 @@ export class OTSStatic {
     const pc = normalisePostcode(raw); if (!pc) return { error: "Enter a full UK postcode, e.g. SW1A 1AA", status: 400 };
     const area = areaOf(pc);
     if (NON_GB_AREAS[area]) { const location = { postcode: pc, outward: outwardOf(pc), area, country: NON_GB_AREAS[area], district: null, ward: null, source: "postcode format only (not in OS Code-Point Open)", data_version: null, partial: true }; return { location, caveats: caveatsFor(location) }; }
-    const f = await this.get(`/api/v1/postcode/${outwardOf(pc)}.json`);
+    // areas.json lists every outward code we hold, so an unknown outward code is answered without a 404 request.
+    const idx = await this.get("/api/v1/postcode/areas.json").catch(() => null);
+    const known = idx?.areas ? (idx.areas[area] ?? []).includes(outwardOf(pc)) : true;
+    const f = known ? await this.get(`/api/v1/postcode/${outwardOf(pc)}.json`) : null;
     const r = f?.rows.find((x) => x[0] === pc);
     if (!r) return { error: `We could not find ${pc} in our local postcode data. Check it, or enter your address manually.`, status: 404, postcode: pc, caveats: caveatsFor(null) };
     const [postcode, country_code, district_code, ward_code] = r;
@@ -58,9 +61,17 @@ export class OTSStatic {
     let l = { location: null, caveats: caveatsFor(null) };
     if (typeof where === "string") { l = await this.location(where); if (l.error) return l; } else if (where?.location) l = where;
     const [doc, pv] = await Promise.all([this.catalogue(), this.providerView()]);
-    const list = l.location ? offersForArea(doc, l.location.area, l.location.outward) : doc.offers.filter((o) => !o.regions?.areas?.length && !o.regions?.outwards?.length);
+    // The catalogue is researched from GB provider pages only. Northern Ireland and the Crown dependencies get no catalogue
+    // offers (only offers that explicitly list their postcode area), rather than GB prices that may not apply there.
+    const nonGb = !!(l.location && NON_GB_AREAS[l.location.area]);
+    const list = !l.location ? doc.offers.filter((o) => !o.regions?.areas?.length && !o.regions?.outwards?.length)
+      : nonGb ? doc.offers.filter((o) => o.regions?.areas?.includes(l.location.area) && offersForArea({ offers: [o] }, l.location.area, l.location.outward).length)
+      : offersForArea(doc, l.location.area, l.location.outward);
     const offers = list.map((o) => ({ ...o, provider: pv(o.provider_id), copy: OFFER_COPY }));
-    return { ...l, catalogue_version: doc.version, published_at: doc.published_at, offers, empty_reason: offers.length ? null : doc.version === 0 ? "No reviewed offers have been published yet. You can still compare quotes you've been given." : "No published offers match this area. You can still compare quotes you've been given." };
+    const empty = doc.version === 0 ? "No reviewed offers have been published yet. You can still compare quotes you've been given."
+      : nonGb ? `Our published offers are researched from providers' Great Britain pages, so we don't list them for ${l.location.country}. You can still compare quotes you've been given.`
+      : "No published offers match this area. You can still compare quotes you've been given.";
+    return { ...l, catalogue_version: doc.version, published_at: doc.published_at, offers, empty_reason: offers.length ? null : empty };
   }
   async compare(body) { const [doc, pv] = await Promise.all([this.catalogue(), this.providerView()]); return runCompare(body, doc, pv); }
   normaliseAddress(a) { return normaliseAddress(a); }

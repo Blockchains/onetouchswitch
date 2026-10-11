@@ -29,12 +29,28 @@ jobs:
       - run: |
           set -e; B=https://blockchains.github.io/onetouchswitch
           c() { curl -sSf --retry 8 --retry-all-errors --retry-delay 10 "$@"; }
+          # the Pages CDN caches for up to 10 minutes: wait until it serves catalogue v3+ and no longer serves v2
+          for i in $(seq 1 60); do v=$(curl -sS "$B/api/v1/catalogue/current.json" | python3 -c "import json,sys;print(json.load(sys.stdin)['version'])" || echo 0); s2=$(curl -sS -o /dev/null -w '%{http_code}' "$B/api/v1/catalogue/v2.json"); [ "$v" -ge 3 ] && [ "$s2" = 404 ] && break; sleep 15; done
           c "$B/api/v1/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['postcodes']['count']>1500000;assert d['engine_version']=='ots-static-2';print('postcodes',d['postcodes']['count'],'guides',d['guides']['count'])"
           c "$B/api/v1/postcode/HU1.json" | python3 -c "import json,sys;d=json.load(sys.stdin);r=[x for x in d['rows'] if x[0]=='HU1 1AA'][0];assert d['names'][r[2]]=='City of Kingston upon Hull';print('HU1 1AA ok')"
           c "$B/api/v1/postcode/areas.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert len(d['areas']['HU'])>10;print('areas ok')"
-          c "$B/api/v1/catalogue/current.json" | python3 -c "import json,sys;d=json.load(sys.stdin);o=d['offers'];assert d['version']>=2 and d.get('needs_review_count',0)==0 and len(o)>=50;assert all(x['source_url'].startswith('https://') and x['reviewed_by'] and x['retrieved_at'] and not x.get('needs_review') for x in o);print('catalogue v',d['version'],len(o),'offers',sum(x['costable'] for x in o),'costable',len(d['providers']),'providers','live')"
-          # v1 was draft (needs_review on every offer); Pages must not serve it
-          code=$(curl -sS -o /dev/null -w '%{http_code}' "$B/api/v1/catalogue/v1.json"); test "$code" = "404"; echo "draft v1 not served ($code)"
+          c "$B/api/v1/catalogue/current.json" | python3 -c "import json,sys;d=json.load(sys.stdin);o=d['offers'];assert d['version']>=3 and d.get('needs_review_count',0)==0 and len(o)>=50;assert all(x['monthly_pence'] is not None and x['source_url'].startswith('https://') and x['reviewed_by'] and x['retrieved_at'] and not x.get('needs_review') for x in o);print('catalogue v',d['version'],len(o),'offers',sum(x['costable'] for x in o),'costable',len(d['providers']),'providers','live')"
+          # superseded versions (v1 draft, v2 incl. withdrawn offers) are not served
+          for v in 1 2; do code=$(curl -sS -o /dev/null -w '%{http_code}' "$B/api/v1/catalogue/v$v.json"); test "$code" = "404"; echo "v$v not served ($code)"; done
           c "$B/api/v1/handoff.json" | python3 -c "import json,sys;d=json.load(sys.stdin);print('approved handoffs',len(d['approved']))"
           c "$B/api/v1/guides/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['count']>=10;print('guides ok')"
           for p in "" sw.js engine/v1/ots-engine.mjs vendor/pdfjs/pdf.min.mjs vendor/pdfjs/pdf.worker.min.mjs guides/how-we-compare/ api/v1/catalogue/current.json llms.txt; do c -o /dev/null "$B/$p"; echo "ok /$p"; done
+  live-journey:
+    name: Online journey on the live site (postcode -> real offers -> compare; no console errors)
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Wait for the Pages CDN to serve this commit's catalogue
+        run: |
+          want=$(python3 -c "import json;print(json.load(open('catalogue/published/current.json'))['version'])")
+          for i in $(seq 1 60); do got=$(curl -sS https://blockchains.github.io/onetouchswitch/api/v1/index.json | python3 -c "import json,sys;print(json.load(sys.stdin)['catalogue']['version'])" || true); [ "$got" = "$want" ] && { echo "live catalogue v$got"; exit 0; }; sleep 15; done; echo "CDN still serving v$got"; exit 1
+      - run: npm run test:live

@@ -1,4 +1,4 @@
-// Production Pages build (researched catalogue v2, Ismail-approved; no handoffs approved). Everything runs from static files + the in-browser engine.
+// Production Pages build (catalogue v3: v2 re-verified against live provider pages 2026-10-11, unverifiable/unpriced offers withdrawn; no handoffs approved). Everything runs from static files + the in-browser engine.
 import { test, expect } from "@playwright/test";
 import { guardOrigin, findArea, addQuote } from "./helpers.mjs";
 const ORIGIN = "http://127.0.0.1:8797";
@@ -47,10 +47,37 @@ test("unknown postcode -> manual address (not verified) -> quotes compare; no-po
   await expect(page.getByTestId("area")).toContainText("No postcode");
   await findArea(page, "BT1 1AA");
   await expect(page.locator('[data-caveat="ni"]')).toBeVisible();
+  await expect(page.getByTestId("area")).toContainText("Northern Ireland");
+  // GB-researched offers are not shown for Northern Ireland; quotes still work
+  await expect(page.getByTestId("offers")).toHaveCount(0);
+  await expect(page.getByTestId("no-offers")).toContainText("Great Britain pages, so we don't list them for Northern Ireland");
+  await findArea(page, "JE2 3AB");
+  await expect(page.locator('[data-caveat="crown-dependency"]')).toBeVisible();
+  await expect(page.getByTestId("no-offers")).toContainText("Jersey");
+  done();
+});
+
+test("GB postcode lookup: SW1A 1AA, HU1 1AA, EH1 1YZ, CF10 1EP resolve from OS Code-Point Open; bad format rejected; no 404s", async ({ page }) => {
+  const done = guardOrigin(page, ORIGIN);
+  const bad = []; page.on("response", (r) => { if (r.status() >= 400) bad.push(`${r.status()} ${r.url()}`); });
+  await page.goto("/onetouchswitch/");
+  for (const [pc, want, country] of [["sw1a 1aa", "Westminster", "England"], ["HU1 1AA", "City of Kingston upon Hull", "England"], ["EH1 1YZ", "City of Edinburgh", "Scotland"], ["CF10 1EP", "Cardiff", "Wales"]]) {
+    await findArea(page, pc);
+    await expect(page.getByTestId("area")).toContainText(want); await expect(page.getByTestId("area")).toContainText(`(${country})`);
+    await expect(page.getByTestId("area")).toContainText("OS Code-Point Open");
+    await expect(page.getByTestId("offers").locator("li").first()).toBeVisible();
+  }
+  await findArea(page, "SW1A");
+  await expect(page.getByRole("alert")).toContainText("Enter a full UK postcode");
+  await findArea(page, "ZZ1 1ZZ"); // unknown outward code: answered from areas.json, no 404 request
+  await expect(page.getByRole("alert")).toContainText("could not find ZZ1 1ZZ");
+  await expect(page.getByTestId("manual-fallback")).toBeVisible();
+  expect(bad).toEqual([]);
   done();
 });
 
 test("current deal: exit fee clarity, vs staying, comparison period, shortlist + view all", async ({ page }) => {
+  const done = guardOrigin(page, ORIGIN);
   await page.goto("/onetouchswitch/");
   await findArea(page, "EH1 1YZ");
   await page.getByLabel("Monthly price now (£)").fill("25"); await page.getByLabel("Price after contract ends (£)").fill("45");
@@ -74,6 +101,7 @@ test("current deal: exit fee clarity, vs staying, comparison period, shortlist +
   await page.getByTestId("quotes").getByRole("button", { name: "Edit" }).first().click();
   await page.getByLabel("Monthly (£)").fill("10"); await page.getByRole("button", { name: "Save costs" }).click();
   await expect(page.getByTestId("quotes")).toContainText("Quote A: £10.00/month");
+  done();
 });
 
 test("bill: PDF read on device -> confirm -> fills current deal; pasted text; photo -> manual entry", async ({ page }) => {
@@ -114,12 +142,14 @@ test("guides: static pages + in-app search", async ({ page }) => {
 });
 
 test("engine bundle importable by touch.grok.me (same answers, same files)", async ({ page }) => {
+  const done = guardOrigin(page, ORIGIN);
   await page.goto("/onetouchswitch/");
   const r = await page.evaluate(async () => { const m = await import("/onetouchswitch/engine/v1/ots-engine.mjs"); const c = new m.OTSStatic(location.origin + "/onetouchswitch/");
     const l = await c.location("HU1 1AA"); const cmp = await c.compare({ start: "2026-10", quotes: [{ label: "Q", monthly_pence: 2999, contract_months: 24, annual_rise_pence: 300, rise_month: 4 }] });
     const g = await c.searchGuides("social tariff"); const b = c.extractBillText("monthly £30.00");
     return { d: l.location.district, kcom: l.caveats.some((x) => x.code === "kcom-area"), total: cmp.results[0].total, copy: m.OFFER_COPY, guide: g[0].slug, bill: b.fields.monthly_pence }; });
   expect(r).toEqual({ d: "City of Kingston upon Hull", kcom: true, total: "£791.76", copy: "Published offer. Check availability with the provider.", guide: "social-tariffs", bill: 3000 });
+  done();
 });
 
 test("cross-origin embed (touch.grok.me model): another origin imports the engine + reads a PDF bill using only the Pages origin", async ({ page }) => {
@@ -137,18 +167,38 @@ test("cross-origin embed (touch.grok.me model): another origin imports the engin
   expect([...seen].sort()).toEqual(["http://127.0.0.1:8797", "http://127.0.0.1:8798"]);
 });
 
-test("published catalogue: provider filter, full offer details, cost several real offers; uncostable offers can't be ticked", async ({ page }) => {
+test("published catalogue v3: only re-verified priced offers; listed-only offers have no tick box; cost several real offers", async ({ page }) => {
   const done = guardOrigin(page, ORIGIN);
   await page.clock.setFixedTime(new Date("2026-10-15T12:00:00"));
   await page.goto("/onetouchswitch/");
   await findArea(page, "HU1 1AA");
   const offers = page.getByTestId("offers");
-  await expect(page.getByTestId("catalogue-meta")).toContainText("Catalogue v2");
+  await expect(page.getByTestId("catalogue-meta")).toContainText("Catalogue v3");
+  await expect(page.getByTestId("versions")).toContainText("offer catalogue v3 (59 offers)");
   await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("£30.99/month");
   await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("reviewer: Ismail Malik");
   await expect(offers.locator("li[data-offer=bt-full-fibre-300] a", { hasText: "source" })).toHaveAttribute("href", "https://www.bt.com/broadband/deals");
-  await expect(offers.locator("li[data-offer=bt-home-essentials] input[type=checkbox]")).toBeDisabled();
-  await expect(offers.locator("li[data-offer=bt-home-essentials]")).toContainText("price not published");
+  // withdrawn on re-check: no price on the page / page not verifiable
+  await expect(offers.locator("li[data-offer=bt-home-essentials]")).toHaveCount(0);
+  await expect(offers.locator("li[data-offer=plusnet-full-fibre-from]")).toHaveCount(0);
+  await expect(offers).not.toContainText("price not published");
+  // every visible offer shows a real £ price
+  for (const li of await offers.locator("li").all()) await expect(li).toContainText(/£\d+\.\d{2}\/month/);
+  // no disabled controls anywhere in the offer list
+  await expect(offers.locator("input:disabled, button:disabled")).toHaveCount(0);
+  const vm = offers.locator("li[data-offer=virgin-media-m125]");
+  await expect(vm.getByRole("checkbox")).toHaveCount(0);
+  await expect(vm.getByTestId("listed-only")).toBeVisible();
+  await expect(vm).toContainText("doesn't state the contract length");
+  // Edit costs on a listed-only offer: never guesses the contract length
+  await vm.getByRole("button", { name: "Edit costs" }).click();
+  await expect(page.getByLabel("Contract months")).toHaveValue("");
+  await page.getByRole("button", { name: "Save costs" }).click();
+  await expect(page.getByTestId("quote-form")).toContainText("Choose the contract length you were quoted");
+  await page.getByLabel("Contract months").selectOption("18");
+  await page.getByRole("button", { name: "Save costs" }).click();
+  await expect(page.getByTestId("quotes")).toContainText("Virgin Media — M125 Fibre Broadband (my costs): £23.99/month, 18 months");
+  await page.getByTestId("quotes").getByRole("button", { name: "Remove" }).click();
   await page.getByLabel("Filter by provider").selectOption("kcom");
   await expect(offers.locator("li")).toHaveCount(3);
   await offers.locator("li[data-offer=kcom-power-fibre-100-hull] input").check();
@@ -162,6 +212,7 @@ test("published catalogue: provider filter, full offer details, cost several rea
   await expect(t.locator("tr[data-row=youfibre-you-1000]")).toContainText("£576.00");
   await expect(t.locator("tr[data-row]").nth(0)).toContainText("YouFibre");
   await expect(t).toContainText("Published offer. Check availability with the provider.");
+  await expect(t.getByRole("link", { name: "Check availability with BT" })).toHaveAttribute("href", /^https:\/\/www\.bt\.com\//);
   await expect(page.locator("body")).not.toContainText(/order now|buy now|switch now|available at your address|we'll switch you/i);
   done();
 });

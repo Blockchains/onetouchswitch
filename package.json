@@ -16,6 +16,7 @@
     "test": "npm run test:unit",
     "test:unit": "node --test --test-concurrency=1 tests/unit/*.test.mjs",
     "test:e2e": "playwright test",
+    "test:live": "playwright test -c playwright.live.config.mjs",
     "offline-check": "node scripts/offline-check.mjs",
     "check:deps": "node scripts/check-no-external.mjs"
   },

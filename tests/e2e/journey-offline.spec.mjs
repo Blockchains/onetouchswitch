@@ -8,7 +8,8 @@ const PORT = 8796, ORIGIN = `http://127.0.0.1:${PORT}`, URL0 = `${ORIGIN}/onetou
 test("works with no network after the first load", async ({ page, context }) => {
   const srv = spawn(process.execPath, ["scripts/static-server.mjs", String(PORT), "tests/fixtures/overlay"], { stdio: "pipe" });
   await new Promise((ok, no) => { srv.stdout.on("data", (d) => String(d).includes("static on") && ok()); srv.on("exit", no); });
-  const done = guardOrigin(page, ORIGIN);
+  // Offline, a postcode file that is not on this device fails to load (expected, handled in the UI); nothing else may error.
+  const done = guardOrigin(page, ORIGIN, { allow: [/Failed to load resource: net::ERR_(INTERNET_DISCONNECTED|FAILED|CONNECTION_REFUSED)/] });
   try {
     await page.goto(URL0);
     await page.evaluate(() => navigator.serviceWorker.ready);
