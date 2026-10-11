@@ -1,0 +1,1 @@
+Rendered text of each provider page as captured by headless Chrome on 2026-10-11 (Europe/London), kept as review evidence for catalogue v1. Plusnet per-plan cards sat behind a reCAPTCHA; its public legal text was read via a plain fetch of https://www.plus.net/broadband/.

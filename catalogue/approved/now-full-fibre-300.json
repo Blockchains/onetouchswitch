@@ -1,0 +1,55 @@
+{
+ "offer": {
+  "id": "now-full-fibre-300",
+  "provider_id": "now",
+  "name": "NOW Full Fibre 300",
+  "monthly_pence": 2700,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Activation fee",
+    "pence": 0
+   },
+   {
+    "label": "Delivery fee",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": null,
+  "rise_month": null,
+  "rise_rule": "Page says 'Price may change during 24-month minimum term'; £ amount not stated.",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 300,
+  "upload_mbps": 40,
+  "speed_note": "Estimated download/upload",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "NOW Broadband powered by Sky. Full Fibre available to 79% of UK homes.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.nowtv.com/broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence",
+   "annual_rise_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence, annual_rise_pence."
+ }
+}

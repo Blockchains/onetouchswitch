@@ -1,0 +1,48 @@
+{
+ "offer": {
+  "id": "hyperoptic-1gb",
+  "provider_id": "hyperoptic",
+  "name": "1Gb Full Fibre (3 months free)",
+  "monthly_pence": 2600,
+  "price_is_from": false,
+  "intro_pence": 0,
+  "intro_months": 3,
+  "upfront_pence": null,
+  "one_off_fees": [],
+  "contract_months": 24,
+  "annual_rise_pence": 400,
+  "rise_month": 4,
+  "rise_rule": "Page: then £26/m, £30/m from April '27, £34/m from April '28.",
+  "exit_fee_pence": null,
+  "exit_fee_rule": "If you leave within the minimum term: remaining monthly payments, minus VAT, minus costs Hyperoptic saves, plus VAT (Guide to Charges and Fees, from 29/11/2023). Monthly Rolling: no termination fee.",
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 900,
+  "upload_mbps": 900,
+  "speed_note": "Average peak-time wired",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "Hyperoptic network buildings only (64 UK towns and cities). 30 days to cancel with no exit fee. Up to £300 bill credit for exit fees (not deducted).",
+  "offer_ends": "2026-11-03",
+  "regions": {},
+  "source_url": "https://www.hyperoptic.com/",
+  "extra_source_urls": [
+   "https://www.hyperoptic.com/wp-content/uploads/documents/Hyperoptic_Price_Guide_Book.pdf"
+  ],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence",
+   "upfront_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence, upfront_pence."
+ }
+}

@@ -38,7 +38,7 @@ export function App() {
           <p>No account, no email. Calculations run in your browser. We don't take orders and can't confirm availability; the provider does that.</p>
           <p>Postcode data: Contains OS data © Crown copyright and database right; Royal Mail data © Royal Mail copyright and database right; National Statistics data © Crown copyright and database right.</p>
           {idx ? <p data-testid="versions">Postcode data {idx.postcodes.data_version} · offer catalogue v{idx.catalogue.version} ({idx.catalogue.offers} offers) · engine {idx.engine_version ?? ""}</p> : null}
-          <p>For partners and publishers: settlement data is a <a href={BRIDGE_URL} rel="noopener" target="_blank">separate, optional app</a>. This comparison never depends on it.</p>
+          <p>Operator link: provider/partner settlement runs in a <a href={BRIDGE_URL} rel="noopener" target="_blank">separate back-office app</a>. It is not part of this comparison and never touches your data.</p>
         </footer>
       </main>
     </>

@@ -1,0 +1,72 @@
+{
+ "offer": {
+  "id": "community-fibre-2gbps",
+  "provider_id": "community-fibre",
+  "name": "2Gbps Full Fibre (double speed from 1Gbps)",
+  "monthly_pence": 2500,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Set-up fee",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 300,
+  "rise_month": 4,
+  "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+  "cashback_pence": 0,
+  "download_mbps": 2000,
+  "upload_mbps": 2000,
+  "speed_note": "Average symmetrical download/upload",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation.",
+  "offer_ends": "2026-10-14",
+  "regions": {
+   "areas": [
+    "E",
+    "EC",
+    "N",
+    "NW",
+    "SE",
+    "SW",
+    "W",
+    "WC",
+    "BR",
+    "CR",
+    "DA",
+    "EN",
+    "HA",
+    "IG",
+    "KT",
+    "RM",
+    "SM",
+    "TW",
+    "UB"
+   ]
+  },
+  "source_url": "https://communityfibre.co.uk/",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

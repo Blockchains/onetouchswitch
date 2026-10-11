@@ -1,0 +1,50 @@
+{
+ "offer": {
+  "id": "ee-core-900",
+  "provider_id": "ee",
+  "name": "900Mbps Core Broadband",
+  "monthly_pence": 3399,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 1000,
+  "one_off_fees": [
+   {
+    "label": "Activation fee (online exclusive: was £30)",
+    "pence": 1000
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 400,
+  "rise_month": 4,
+  "rise_rule": "Price rises by £4.00/month from 31 Mar 2027 and again from 31 Mar 2028 (as shown on the page).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 900,
+  "upload_mbps": 110,
+  "speed_note": "700Mbps speed guarantee",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "New customers, 24 month contract. Month one includes the one-off fee. Up to £200 credit towards leaving fees (£300 with TV) is not deducted. Technology: page says plans use full or part fibre; FTTP inferred for speeds above 80Mbps.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://ee.co.uk/broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

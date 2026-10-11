@@ -1,0 +1,2973 @@
+{
+ "schema": "ots-offer-research-2",
+ "retrieved_at": "2026-10-11",
+ "method": "Each figure was read from the provider's own public page (rendered in a browser) on the retrieved date. Third-party comparison sites were used only to find URLs, never as a price source. Missing figures are null and listed in review_flags.",
+ "offers": [
+  {
+   "id": "bt-full-fibre-300",
+   "provider_id": "bt",
+   "name": "Full Fibre 300",
+   "technology": "FTTP",
+   "download_mbps": 300,
+   "upload_mbps": 49,
+   "speed_note": "150Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 3099,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-full-fibre-500",
+   "provider_id": "bt",
+   "name": "Full Fibre 500",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": 73,
+   "speed_note": "425Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 3399,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-full-fibre-900",
+   "provider_id": "bt",
+   "name": "Full Fibre 900",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 110,
+   "speed_note": "700Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 3599,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-fibre-1",
+   "provider_id": "bt",
+   "name": "Fibre 1",
+   "technology": "FTTC",
+   "download_mbps": 50,
+   "upload_mbps": 10,
+   "speed_note": "25Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 2899,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-fibre-2",
+   "provider_id": "bt",
+   "name": "Fibre 2",
+   "technology": "FTTC",
+   "download_mbps": 74,
+   "upload_mbps": 20,
+   "speed_note": "34Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 3099,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-fibre-essential",
+   "provider_id": "bt",
+   "name": "Fibre Essential",
+   "technology": "FTTC",
+   "download_mbps": 35,
+   "upload_mbps": 8,
+   "speed_note": "32Mbps speed guarantee ; page shows 35-36Mbps down, 8-9Mbps up",
+   "contract_months": 24,
+   "monthly_pence": 2899,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive)",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+   "social_tariff": null,
+   "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/deals",
+   "extra_source_urls": [
+    "https://www.bt.com/broadband"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "bt-home-essentials",
+   "provider_id": "bt",
+   "name": "BT Home Essentials (social tariff)",
+   "technology": "FTTC",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 12,
+   "monthly_pence": null,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "Broadband price does not increase by a monetary amount each March (page); TV adds £2 if taken.",
+   "exit_fee_pence": 0,
+   "exit_fee_rule": "Cancel anytime without any early exit fees (page).",
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": {
+    "name": "BT Home Essentials",
+    "eligible": "Universal Credit, Pension Credit (Guarantee Credit), ESA, JSA, Income Support"
+   },
+   "eligibility_notes": "Social tariff: must receive a qualifying benefit; National Insurance number checked. Monthly price not shown on the public page (in a collapsed FAQ).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.bt.com/broadband/home-essentials",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "monthly_pence",
+    "download_mbps",
+    "upload_mbps",
+    "upfront_pence"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "ee-core-100",
+   "provider_id": "ee",
+   "name": "100Mbps Core Broadband (Full Fibre 100)",
+   "technology": "FTTP",
+   "download_mbps": 100,
+   "upload_mbps": 20,
+   "speed_note": "60Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 2699,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 Mar 2027 and again from 31 Mar 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 3000,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers, 24 month contract. Month one includes the one-off fee. Up to £200 credit towards leaving fees (£300 with TV) is not deducted.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://ee.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "ee-core-300",
+   "provider_id": "ee",
+   "name": "300Mbps Core Broadband",
+   "technology": "FTTP",
+   "download_mbps": 300,
+   "upload_mbps": 50,
+   "speed_note": "250Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 2899,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 Mar 2027 and again from 31 Mar 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 3000,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers, 24 month contract. Month one includes the one-off fee. Up to £200 credit towards leaving fees (£300 with TV) is not deducted. Technology: page says plans use full or part fibre; FTTP inferred for speeds above 80Mbps.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://ee.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "ee-core-900",
+   "provider_id": "ee",
+   "name": "900Mbps Core Broadband",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 110,
+   "speed_note": "700Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 3399,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 Mar 2027 and again from 31 Mar 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 1000,
+   "one_off_fees": [
+    {
+     "label": "Activation fee (online exclusive: was £30)",
+     "pence": 1000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers, 24 month contract. Month one includes the one-off fee. Up to £200 credit towards leaving fees (£300 with TV) is not deducted. Technology: page says plans use full or part fibre; FTTP inferred for speeds above 80Mbps.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://ee.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "ee-core-1600",
+   "provider_id": "ee",
+   "name": "1.6Gbps Core Broadband",
+   "technology": "FTTP",
+   "download_mbps": 1600,
+   "upload_mbps": 115,
+   "speed_note": "1300Mbps speed guarantee",
+   "contract_months": 24,
+   "monthly_pence": 4299,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Price rises by £4.00/month from 31 Mar 2027 and again from 31 Mar 2028 (as shown on the page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 3000,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers, 24 month contract. Month one includes the one-off fee. Up to £200 credit towards leaving fees (£300 with TV) is not deducted. Technology: page says plans use full or part fibre; FTTP inferred for speeds above 80Mbps.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://ee.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "vodafone-broadband-from",
+   "provider_id": "vodafone",
+   "name": "Vodafone Broadband (from price; speed tier not stated)",
+   "technology": null,
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": "Plan family up to 910Mbps; the £24 'from' price is not tied to a named speed on the page",
+   "contract_months": 24,
+   "monthly_pence": 2400,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 350,
+   "rise_month": 4,
+   "rise_rule": "Home Broadband price increases by £3.50 each year on 1 April (page footer); page shows £27.50 on 1 April 2027 and £31 on 1 April 2028 for the £24 plan.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Price depends on speed available at the address. Up to £300 credit towards early termination fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.vodafone.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "upload_mbps",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "vodafone-pro-3-from",
+   "provider_id": "vodafone",
+   "name": "Vodafone Pro 3 Broadband (from price)",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": "Up to 2.2Gbps; full fibre only; includes 4G back-up and Super WiFi booster",
+   "contract_months": 24,
+   "monthly_pence": 3900,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 350,
+   "rise_month": 4,
+   "rise_rule": "Page shows £42.50 on 1 April 2027 and £46 on 1 April 2028.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Full fibre addresses only. 'From' price; speed tier for the price not stated.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.vodafone.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "upload_mbps",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "vodafone-essentials",
+   "provider_id": "vodafone",
+   "name": "Vodafone Essentials Broadband (social tariff)",
+   "technology": null,
+   "download_mbps": 80,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 12,
+   "monthly_pence": 2000,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "No in-contract price increase (page).",
+   "exit_fee_pence": 0,
+   "exit_fee_rule": "12-month contract, no early termination fee (page).",
+   "upfront_pence": 0,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": {
+    "name": "Vodafone Essentials Broadband",
+    "eligible": "JSA, Universal Credit, Pension Credit, ESA, Income Support, Reduced Earnings Allowance, PIP, Disability Allowance"
+   },
+   "eligibility_notes": "Social tariff: new and existing customers receiving listed benefits. Speeds up to 80Mbps.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.vodafone.co.uk/broadband/essentials-broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "sky-full-fibre-gigafast",
+   "provider_id": "sky",
+   "name": "Full Fibre Gigafast (900Mbps)",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 24,
+   "monthly_pence": 2800,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says only 'Price may change during 24 month minimum term'; £ amount not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only. Includes Sky Pay As You Talk. Available to 79% of UK homes. Price available until 14/10/2026. Up to £200 switching credit (not deducted).",
+   "offer_ends": "2026-10-14",
+   "regions": {},
+   "source_url": "https://www.sky.com/deals",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "now-full-fibre-75",
+   "provider_id": "now",
+   "name": "NOW Full Fibre 75",
+   "technology": "FTTP",
+   "download_mbps": 80,
+   "upload_mbps": 16,
+   "speed_note": "Estimated download/upload",
+   "contract_months": 24,
+   "monthly_pence": 2400,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Price may change during 24-month minimum term'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 0
+    },
+    {
+     "label": "Delivery fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "NOW Broadband powered by Sky. Full Fibre available to 79% of UK homes.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.nowtv.com/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "now-full-fibre-100",
+   "provider_id": "now",
+   "name": "NOW Full Fibre 100",
+   "technology": "FTTP",
+   "download_mbps": 100,
+   "upload_mbps": 18,
+   "speed_note": "Estimated download/upload",
+   "contract_months": 24,
+   "monthly_pence": 2400,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Price may change during 24-month minimum term'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 0
+    },
+    {
+     "label": "Delivery fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "NOW Broadband powered by Sky. Full Fibre available to 79% of UK homes.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.nowtv.com/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "now-full-fibre-300",
+   "provider_id": "now",
+   "name": "NOW Full Fibre 300",
+   "technology": "FTTP",
+   "download_mbps": 300,
+   "upload_mbps": 40,
+   "speed_note": "Estimated download/upload",
+   "contract_months": 24,
+   "monthly_pence": 2700,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Price may change during 24-month minimum term'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 0
+    },
+    {
+     "label": "Delivery fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "NOW Broadband powered by Sky. Full Fibre available to 79% of UK homes.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.nowtv.com/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "talktalk-full-fibre-500",
+   "provider_id": "talktalk",
+   "name": "Full Fibre 500",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 24,
+   "monthly_pence": 3000,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Increasing by £4/month from April 2027 and again in April 2028 (page). Note: an older FAQ on the same page still quotes £33/£36 for 2026/2027.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Availability subject to location. Engineer installation may be required.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.talktalk.co.uk/broadband/full-fibre/500mb",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "talktalk-u",
+   "provider_id": "talktalk",
+   "name": "TalkTalk U Smart Wi-Fi (adaptive 65-900Mbps)",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": "Adaptive speed 65-900Mbps; 'all speeds one price'",
+   "contract_months": 24,
+   "monthly_pence": 2500,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Increasing by £4/month from April 2027 and again in April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "'From' price; booster option depends on home size. Full Fibre addresses only.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.talktalk.co.uk/broadband/compare-deals",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "talktalk-fixed-speed-from",
+   "provider_id": "talktalk",
+   "name": "Fixed Speed Wi-Fi (65/150/500/900Mbps; from price)",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 24,
+   "monthly_pence": 2500,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Increasing by £4/month from April 2027 and again in April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "'From £25' is not tied to a named speed on the page; per-speed price needs an address check.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.talktalk.co.uk/broadband/compare-deals",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "virgin-media-m125",
+   "provider_id": "virgin-media",
+   "name": "M125 Fibre Broadband",
+   "technology": "cable",
+   "download_mbps": 132,
+   "upload_mbps": null,
+   "speed_note": "Average download speed",
+   "contract_months": null,
+   "monthly_pence": 2399,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    },
+    {
+     "label": "Optional engineer install when self-install possible",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.virginmedia.com/broadband",
+   "extra_source_urls": [
+    "https://www.virginmedia.com/broadband/broadband-only"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "virgin-media-m250",
+   "provider_id": "virgin-media",
+   "name": "M250 Fibre Broadband",
+   "technology": "cable",
+   "download_mbps": 264,
+   "upload_mbps": null,
+   "speed_note": "Average download speed",
+   "contract_months": null,
+   "monthly_pence": 2599,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    },
+    {
+     "label": "Optional engineer install when self-install possible",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.virginmedia.com/broadband",
+   "extra_source_urls": [
+    "https://www.virginmedia.com/broadband/broadband-only"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "virgin-media-m350",
+   "provider_id": "virgin-media",
+   "name": "M350 Fibre Broadband",
+   "technology": "cable",
+   "download_mbps": 362,
+   "upload_mbps": null,
+   "speed_note": "Average download speed",
+   "contract_months": null,
+   "monthly_pence": 2599,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    },
+    {
+     "label": "Optional engineer install when self-install possible",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.virginmedia.com/broadband",
+   "extra_source_urls": [
+    "https://www.virginmedia.com/broadband/broadband-only"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "virgin-media-m500",
+   "provider_id": "virgin-media",
+   "name": "M500 Fibre Broadband",
+   "technology": "cable",
+   "download_mbps": 516,
+   "upload_mbps": null,
+   "speed_note": "Average download speed",
+   "contract_months": null,
+   "monthly_pence": 2799,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    },
+    {
+     "label": "Optional engineer install when self-install possible",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.virginmedia.com/broadband",
+   "extra_source_urls": [
+    "https://www.virginmedia.com/broadband/broadband-only"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "virgin-media-gigabit",
+   "provider_id": "virgin-media",
+   "name": "Gigabit Fibre Broadband",
+   "technology": "cable",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": "Gigabit; average not stated",
+   "contract_months": null,
+   "monthly_pence": 2999,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Setup fee",
+     "pence": 0
+    },
+    {
+     "label": "Optional engineer install when self-install possible",
+     "pence": 3000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.virginmedia.com/broadband",
+   "extra_source_urls": [
+    "https://www.virginmedia.com/broadband/broadband-only"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "download_mbps",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "plusnet-full-fibre-from",
+   "provider_id": "plusnet",
+   "name": "Plusnet Full Fibre (from price; tier not stated)",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 24,
+   "monthly_pence": 2499,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "On 31 March each year the monthly plan price increases by £4 (page legal text).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Per-plan prices load behind a bot check and could not be read; only 'Full Fibre deals from £24.99 a month' is public. £50 Reward Card with Full Fibre 900 until 25 Oct 2026.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.plus.net/broadband/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "upload_mbps",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "community-fibre-300",
+   "provider_id": "community-fibre",
+   "name": "300Mbps Full Fibre (double speed from 150Mbps)",
+   "technology": "FTTP",
+   "download_mbps": 350,
+   "upload_mbps": 350,
+   "speed_note": "Average symmetrical download/upload",
+   "contract_months": 24,
+   "monthly_pence": 1900,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 4,
+   "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+   "social_tariff": null,
+   "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation.",
+   "offer_ends": "2026-10-14",
+   "regions": {
+    "areas": [
+     "E",
+     "EC",
+     "N",
+     "NW",
+     "SE",
+     "SW",
+     "W",
+     "WC",
+     "BR",
+     "CR",
+     "DA",
+     "EN",
+     "HA",
+     "IG",
+     "KT",
+     "RM",
+     "SM",
+     "TW",
+     "UB"
+    ]
+   },
+   "source_url": "https://communityfibre.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "community-fibre-1gbps",
+   "provider_id": "community-fibre",
+   "name": "1Gbps Full Fibre (double speed from 500Mbps)",
+   "technology": "FTTP",
+   "download_mbps": 1000,
+   "upload_mbps": 1000,
+   "speed_note": "Average symmetrical download/upload",
+   "contract_months": 24,
+   "monthly_pence": 2100,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 4,
+   "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+   "social_tariff": null,
+   "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation.",
+   "offer_ends": "2026-10-14",
+   "regions": {
+    "areas": [
+     "E",
+     "EC",
+     "N",
+     "NW",
+     "SE",
+     "SW",
+     "W",
+     "WC",
+     "BR",
+     "CR",
+     "DA",
+     "EN",
+     "HA",
+     "IG",
+     "KT",
+     "RM",
+     "SM",
+     "TW",
+     "UB"
+    ]
+   },
+   "source_url": "https://communityfibre.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "community-fibre-2gbps",
+   "provider_id": "community-fibre",
+   "name": "2Gbps Full Fibre (double speed from 1Gbps)",
+   "technology": "FTTP",
+   "download_mbps": 2000,
+   "upload_mbps": 2000,
+   "speed_note": "Average symmetrical download/upload",
+   "contract_months": 24,
+   "monthly_pence": 2500,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 4,
+   "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+   "social_tariff": null,
+   "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation.",
+   "offer_ends": "2026-10-14",
+   "regions": {
+    "areas": [
+     "E",
+     "EC",
+     "N",
+     "NW",
+     "SE",
+     "SW",
+     "W",
+     "WC",
+     "BR",
+     "CR",
+     "DA",
+     "EN",
+     "HA",
+     "IG",
+     "KT",
+     "RM",
+     "SM",
+     "TW",
+     "UB"
+    ]
+   },
+   "source_url": "https://communityfibre.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "community-fibre-2gbps-premium",
+   "provider_id": "community-fibre",
+   "name": "2Gbps Premium (double speed from 1Gbps Premium)",
+   "technology": "FTTP",
+   "download_mbps": 2000,
+   "upload_mbps": 2000,
+   "speed_note": "Average symmetrical download/upload",
+   "contract_months": 24,
+   "monthly_pence": 3200,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 4,
+   "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+   "social_tariff": null,
+   "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation. Premium: whole-home coverage guarantee, bespoke engineer set-up, priority support.",
+   "offer_ends": "2026-10-14",
+   "regions": {
+    "areas": [
+     "E",
+     "EC",
+     "N",
+     "NW",
+     "SE",
+     "SW",
+     "W",
+     "WC",
+     "BR",
+     "CR",
+     "DA",
+     "EN",
+     "HA",
+     "IG",
+     "KT",
+     "RM",
+     "SM",
+     "TW",
+     "UB"
+    ]
+   },
+   "source_url": "https://communityfibre.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "community-fibre-5gbps-premium",
+   "provider_id": "community-fibre",
+   "name": "5Gbps Premium (double speed from 2.5Gbps)",
+   "technology": "FTTP",
+   "download_mbps": 5000,
+   "upload_mbps": 5000,
+   "speed_note": "Average symmetrical download/upload",
+   "contract_months": 24,
+   "monthly_pence": 4300,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 4,
+   "rise_rule": "+£3/month from April 2027 and again from April 2028 (page shows each step).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Set-up fee",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "At the end of the contract the price increases by £4 vs the last month, then £3 each April (page).",
+   "social_tariff": null,
+   "eligibility_notes": "London only. New customers, selected 24-month contracts. Double-speed flash sale ends 14 Oct 2026. £0 set-up, free installation. 30-day no-fee cancellation. Premium: whole-home coverage guarantee, bespoke engineer set-up, priority support.",
+   "offer_ends": "2026-10-14",
+   "regions": {
+    "areas": [
+     "E",
+     "EC",
+     "N",
+     "NW",
+     "SE",
+     "SW",
+     "W",
+     "WC",
+     "BR",
+     "CR",
+     "DA",
+     "EN",
+     "HA",
+     "IG",
+     "KT",
+     "RM",
+     "SM",
+     "TW",
+     "UB"
+    ]
+   },
+   "source_url": "https://communityfibre.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-150mb",
+   "provider_id": "hyperoptic",
+   "name": "150Mb Full Fibre",
+   "technology": "FTTP",
+   "download_mbps": 159,
+   "upload_mbps": 157,
+   "speed_note": "Average peak-time wired",
+   "contract_months": 24,
+   "monthly_pence": 1900,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "£4 increase every April: page shows +£4 from April 2027 and +£4 from April 2028.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": "If you leave within the minimum term: remaining monthly payments, minus VAT, minus costs Hyperoptic saves, plus VAT (Guide to Charges and Fees, from 29/11/2023). Monthly Rolling: no termination fee.",
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Prices vary by location ('from' price). Hyperoptic network buildings only (64 UK towns and cities). 30 days to cancel with no exit fee. Up to £300 bill credit for exit fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/",
+   "extra_source_urls": [
+    "https://www.hyperoptic.com/wp-content/uploads/documents/Hyperoptic_Price_Guide_Book.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-500mb",
+   "provider_id": "hyperoptic",
+   "name": "500Mb Full Fibre",
+   "technology": "FTTP",
+   "download_mbps": 527,
+   "upload_mbps": 523,
+   "speed_note": "Average peak-time wired",
+   "contract_months": 24,
+   "monthly_pence": 2000,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "£4 increase every April: page shows +£4 from April 2027 and +£4 from April 2028.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": "If you leave within the minimum term: remaining monthly payments, minus VAT, minus costs Hyperoptic saves, plus VAT (Guide to Charges and Fees, from 29/11/2023). Monthly Rolling: no termination fee.",
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Prices vary by location ('from' price). Hyperoptic network buildings only (64 UK towns and cities). 30 days to cancel with no exit fee. Up to £300 bill credit for exit fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/",
+   "extra_source_urls": [
+    "https://www.hyperoptic.com/wp-content/uploads/documents/Hyperoptic_Price_Guide_Book.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-1gb",
+   "provider_id": "hyperoptic",
+   "name": "1Gb Full Fibre (3 months free)",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 900,
+   "speed_note": "Average peak-time wired",
+   "contract_months": 24,
+   "monthly_pence": 2600,
+   "price_is_from": false,
+   "intro_pence": 0,
+   "intro_months": 3,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "Page: then £26/m, £30/m from April '27, £34/m from April '28.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": "If you leave within the minimum term: remaining monthly payments, minus VAT, minus costs Hyperoptic saves, plus VAT (Guide to Charges and Fees, from 29/11/2023). Monthly Rolling: no termination fee.",
+   "upfront_pence": null,
+   "one_off_fees": [],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Hyperoptic network buildings only (64 UK towns and cities). 30 days to cancel with no exit fee. Up to £300 bill credit for exit fees (not deducted).",
+   "offer_ends": "2026-11-03",
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/",
+   "extra_source_urls": [
+    "https://www.hyperoptic.com/wp-content/uploads/documents/Hyperoptic_Price_Guide_Book.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upfront_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-fair-fibre-150",
+   "provider_id": "hyperoptic",
+   "name": "Fair Fibre Plan 150Mb (social tariff)",
+   "technology": "FTTP",
+   "download_mbps": 150,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 1,
+   "monthly_pence": 1300,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": 0,
+   "exit_fee_rule": "No commitment, 30 days' notice (page).",
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": {
+    "name": "Hyperoptic Fair Fibre Plan",
+    "eligible": "Universal Credit or other qualifying benefits, at certain locations"
+   },
+   "eligibility_notes": "Social tariff: qualifying benefits; location-dependent.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/home-broadband/social-tariff",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "annual_rise_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-fair-fibre-500",
+   "provider_id": "hyperoptic",
+   "name": "Fair Fibre Plan 500Mb (social tariff)",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 1,
+   "monthly_pence": 1700,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": 0,
+   "exit_fee_rule": "No commitment, 30 days' notice (page).",
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": {
+    "name": "Hyperoptic Fair Fibre Plan",
+    "eligible": "Universal Credit or other qualifying benefits, at certain locations"
+   },
+   "eligibility_notes": "Social tariff: qualifying benefits; location-dependent.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/home-broadband/social-tariff",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "annual_rise_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "hyperoptic-fair-fibre-1gb",
+   "provider_id": "hyperoptic",
+   "name": "Fair Fibre Plan 1Gb (social tariff)",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 1,
+   "monthly_pence": 2000,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": 0,
+   "exit_fee_rule": "No commitment, 30 days' notice (page).",
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": {
+    "name": "Hyperoptic Fair Fibre Plan",
+    "eligible": "Universal Credit or other qualifying benefits, at certain locations"
+   },
+   "eligibility_notes": "Social tariff: qualifying benefits; location-dependent.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.hyperoptic.com/home-broadband/social-tariff",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "annual_rise_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "youfibre-you-200",
+   "provider_id": "youfibre",
+   "name": "You 200",
+   "technology": "FTTP",
+   "download_mbps": 200,
+   "upload_mbps": 200,
+   "speed_note": "Average symmetrical wired",
+   "contract_months": 24,
+   "monthly_pence": 2200,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "No in-contract price rises; prices fixed for the 24-month term (page + offer T&Cs).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Install and set-up",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "After 24 months the then-current list price in the YouFibre Price Book applies (offer T&Cs).",
+   "social_tariff": null,
+   "eligibility_notes": "Prices available until 31/10/26 (promotional period 01/10/26-31/10/26). YouFibre network areas only.",
+   "offer_ends": "2026-10-31",
+   "regions": {},
+   "source_url": "https://www.youfibre.com/our-plans/",
+   "extra_source_urls": [
+    "https://www.youfibre.com/legal/offer-terms-and-conditions/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "youfibre-you-1000",
+   "provider_id": "youfibre",
+   "name": "You 1000",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 900,
+   "speed_note": "Average symmetrical wired",
+   "contract_months": 24,
+   "monthly_pence": 2400,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "No in-contract price rises; prices fixed for the 24-month term (page + offer T&Cs).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Install and set-up",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "After 24 months the then-current list price in the YouFibre Price Book applies (offer T&Cs).",
+   "social_tariff": null,
+   "eligibility_notes": "Prices available until 31/10/26 (promotional period 01/10/26-31/10/26). YouFibre network areas only.",
+   "offer_ends": "2026-10-31",
+   "regions": {},
+   "source_url": "https://www.youfibre.com/our-plans/",
+   "extra_source_urls": [
+    "https://www.youfibre.com/legal/offer-terms-and-conditions/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "youfibre-you-2000",
+   "provider_id": "youfibre",
+   "name": "You 2000",
+   "technology": "FTTP",
+   "download_mbps": 1800,
+   "upload_mbps": 1800,
+   "speed_note": "Average symmetrical wired",
+   "contract_months": 24,
+   "monthly_pence": 3499,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "No in-contract price rises; prices fixed for the 24-month term (page + offer T&Cs).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Install and set-up",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "After 24 months the then-current list price in the YouFibre Price Book applies (offer T&Cs).",
+   "social_tariff": null,
+   "eligibility_notes": "Prices available until 31/10/26 (promotional period 01/10/26-31/10/26). YouFibre network areas only.",
+   "offer_ends": "2026-10-31",
+   "regions": {},
+   "source_url": "https://www.youfibre.com/our-plans/",
+   "extra_source_urls": [
+    "https://www.youfibre.com/legal/offer-terms-and-conditions/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "youfibre-you-8000",
+   "provider_id": "youfibre",
+   "name": "You 8000",
+   "technology": "FTTP",
+   "download_mbps": 7000,
+   "upload_mbps": 7000,
+   "speed_note": "Average symmetrical wired",
+   "contract_months": 24,
+   "monthly_pence": 5000,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 0,
+   "rise_month": null,
+   "rise_rule": "No in-contract price rises; prices fixed for the 24-month term (page + offer T&Cs).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Install and set-up",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "After 24 months the then-current list price in the YouFibre Price Book applies (offer T&Cs).",
+   "social_tariff": null,
+   "eligibility_notes": "Prices available until 31/10/26 (promotional period 01/10/26-31/10/26). YouFibre network areas only.",
+   "offer_ends": "2026-10-31",
+   "regions": {},
+   "source_url": "https://www.youfibre.com/our-plans/",
+   "extra_source_urls": [
+    "https://www.youfibre.com/legal/offer-terms-and-conditions/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-100-rollout",
+   "provider_id": "kcom",
+   "name": "Power Fibre 100 (outside HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 100,
+   "upload_mbps": 100,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 1999,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 200,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £2 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in KCOM rollout areas excluding HU1-HU17 (East Yorkshire, North Lincolnshire, North Yorkshire). Postcode-area mapping HU/DN/YO is our approximation; KCOM checks the exact address. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "areas": [
+     "HU",
+     "DN",
+     "YO"
+    ],
+    "exclude_outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/home/get-offer/",
+   "extra_source_urls": [
+    "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-500-rollout",
+   "provider_id": "kcom",
+   "name": "Power Fibre 500 (outside HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": 500,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 2499,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £3 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in KCOM rollout areas excluding HU1-HU17 (East Yorkshire, North Lincolnshire, North Yorkshire). Postcode-area mapping HU/DN/YO is our approximation; KCOM checks the exact address. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "areas": [
+     "HU",
+     "DN",
+     "YO"
+    ],
+    "exclude_outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/home/get-offer/",
+   "extra_source_urls": [
+    "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-900-rollout",
+   "provider_id": "kcom",
+   "name": "Power Fibre 900 (outside HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 500,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 2999,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £3 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in KCOM rollout areas excluding HU1-HU17 (East Yorkshire, North Lincolnshire, North Yorkshire). Postcode-area mapping HU/DN/YO is our approximation; KCOM checks the exact address. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "areas": [
+     "HU",
+     "DN",
+     "YO"
+    ],
+    "exclude_outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/home/get-offer/",
+   "extra_source_urls": [
+    "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-100-hull",
+   "provider_id": "kcom",
+   "name": "Power Fibre 100 (HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 100,
+   "upload_mbps": 100,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 2499,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 200,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £2 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in postcodes HU1-HU17. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf",
+   "extra_source_urls": [
+    "https://www.kcom.com/home/packages/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-500-hull",
+   "provider_id": "kcom",
+   "name": "Power Fibre 500 (HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": 500,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 2899,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £3 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in postcodes HU1-HU17. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf",
+   "extra_source_urls": [
+    "https://www.kcom.com/home/packages/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "kcom-power-fibre-900-hull",
+   "provider_id": "kcom",
+   "name": "Power Fibre 900 (HU1-HU17)",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 500,
+   "speed_note": "Average download speed",
+   "contract_months": 24,
+   "monthly_pence": 3499,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 300,
+   "rise_month": 3,
+   "rise_rule": "Price increases by £3 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "Autumn Offer 2026 for new residential customers in postcodes HU1-HU17. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+   "offer_ends": "2026-11-03",
+   "regions": {
+    "outwards": [
+     "HU1",
+     "HU2",
+     "HU3",
+     "HU4",
+     "HU5",
+     "HU6",
+     "HU7",
+     "HU8",
+     "HU9",
+     "HU10",
+     "HU11",
+     "HU12",
+     "HU13",
+     "HU14",
+     "HU15",
+     "HU16",
+     "HU17"
+    ]
+   },
+   "source_url": "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf",
+   "extra_source_urls": [
+    "https://www.kcom.com/home/packages/"
+   ],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "toob-home150",
+   "provider_id": "toob",
+   "name": "home150",
+   "technology": "FTTP",
+   "download_mbps": 150,
+   "upload_mbps": 150,
+   "speed_note": "Average symmetrical",
+   "contract_months": 24,
+   "monthly_pence": 1800,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 200,
+   "rise_month": 4,
+   "rise_rule": "+£2/month from the April 2027 bill and another +£2 from the April 2028 bill (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "toob network areas only. 12-month and monthly options exist with different prices (not captured).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.toob.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "toob-home900",
+   "provider_id": "toob",
+   "name": "home900",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 900,
+   "speed_note": "Average symmetrical",
+   "contract_months": 24,
+   "monthly_pence": 2300,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 200,
+   "rise_month": 4,
+   "rise_rule": "+£2/month from the April 2027 bill and another +£2 from the April 2028 bill (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "toob network areas only. 12-month and monthly options exist with different prices (not captured).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.toob.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "toob-home2300",
+   "provider_id": "toob",
+   "name": "home2300",
+   "technology": "FTTP",
+   "download_mbps": 2300,
+   "upload_mbps": 2300,
+   "speed_note": "Average symmetrical",
+   "contract_months": 24,
+   "monthly_pence": 2900,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 200,
+   "rise_month": 4,
+   "rise_rule": "+£2/month from the April 2027 bill and another +£2 from the April 2028 bill (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "toob network areas only. 12-month and monthly options exist with different prices (not captured).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.toob.co.uk/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "uw-full-fibre-150",
+   "provider_id": "utility-warehouse",
+   "name": "Full Fibre 150",
+   "technology": "FTTP",
+   "download_mbps": 152,
+   "upload_mbps": null,
+   "speed_note": "Average download",
+   "contract_months": 24,
+   "monthly_pence": 2395,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "+£4/month from April 2027 and again from April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 599,
+   "one_off_fees": [
+    {
+     "label": "Postage and packing",
+     "pence": 599
+    },
+    {
+     "label": "Installation and connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "UW price promise: they pay double the difference if you find cheaper (terms apply). Up to £400 towards early termination fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://uw.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "uw-full-fibre-500",
+   "provider_id": "utility-warehouse",
+   "name": "Full Fibre 500",
+   "technology": "FTTP",
+   "download_mbps": 500,
+   "upload_mbps": null,
+   "speed_note": "Average download",
+   "contract_months": 24,
+   "monthly_pence": 3000,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "+£4/month from April 2027 and again from April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 599,
+   "one_off_fees": [
+    {
+     "label": "Postage and packing",
+     "pence": 599
+    },
+    {
+     "label": "Installation and connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "UW price promise: they pay double the difference if you find cheaper (terms apply). Up to £400 towards early termination fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://uw.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "uw-full-fibre-900",
+   "provider_id": "utility-warehouse",
+   "name": "Full Fibre 900",
+   "technology": "FTTP",
+   "download_mbps": 944,
+   "upload_mbps": null,
+   "speed_note": "Average download",
+   "contract_months": 24,
+   "monthly_pence": 3500,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "+£4/month from April 2027 and again from April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 599,
+   "one_off_fees": [
+    {
+     "label": "Postage and packing",
+     "pence": 599
+    },
+    {
+     "label": "Installation and connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "UW price promise: they pay double the difference if you find cheaper (terms apply). Up to £400 towards early termination fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://uw.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upload_mbps"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "uw-next-best-thing",
+   "provider_id": "utility-warehouse",
+   "name": "Next Best Thing (Part Fibre, from price)",
+   "technology": "FTTC",
+   "download_mbps": 35,
+   "upload_mbps": null,
+   "speed_note": "Average download 35-63Mbps",
+   "contract_months": 24,
+   "monthly_pence": 2600,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": 400,
+   "rise_month": 4,
+   "rise_rule": "+£4/month from April 2027 and again from April 2028 (page).",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 599,
+   "one_off_fees": [
+    {
+     "label": "Postage and packing",
+     "pence": 599
+    },
+    {
+     "label": "Installation and connection",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "UW price promise: they pay double the difference if you find cheaper (terms apply). Up to £400 towards early termination fees (not deducted).",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://uw.co.uk/broadband",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "gigaclear-300",
+   "provider_id": "gigaclear",
+   "name": "300Mbps Full Fibre",
+   "technology": "FTTP",
+   "download_mbps": 300,
+   "upload_mbps": 300,
+   "speed_note": "Average symmetrical",
+   "contract_months": 18,
+   "monthly_pence": 1900,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Prices may change during the contract'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 3000,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 3000
+    },
+    {
+     "label": "Standard installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "Standard list price after the 18-month minimum term (amount not stated).",
+   "social_tariff": null,
+   "eligibility_notes": "Gigaclear rural network areas only. New customers.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.gigaclear.com/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "gigaclear-600",
+   "provider_id": "gigaclear",
+   "name": "600Mbps Full Fibre",
+   "technology": "FTTP",
+   "download_mbps": 600,
+   "upload_mbps": 600,
+   "speed_note": "Average symmetrical",
+   "contract_months": 18,
+   "monthly_pence": 2400,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Prices may change during the contract'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 0
+    },
+    {
+     "label": "Standard installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": "Standard list price after the 18-month minimum term (amount not stated).",
+   "social_tariff": null,
+   "eligibility_notes": "Gigaclear rural network areas only. New customers.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.gigaclear.com/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "gigaclear-900",
+   "provider_id": "gigaclear",
+   "name": "900Mbps Full Fibre",
+   "technology": "FTTP",
+   "download_mbps": 900,
+   "upload_mbps": 900,
+   "speed_note": "Average symmetrical",
+   "contract_months": 18,
+   "monthly_pence": 3200,
+   "price_is_from": false,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Page says 'Prices may change during the contract'; £ amount not stated.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 0,
+   "one_off_fees": [
+    {
+     "label": "Activation fee",
+     "pence": 0
+    },
+    {
+     "label": "Standard installation",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 8000,
+   "out_of_contract_rule": "Standard list price after the 18-month minimum term (amount not stated).",
+   "social_tariff": null,
+   "eligibility_notes": "Gigaclear rural network areas only. New customers. £80 gift card shown, never deducted.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.gigaclear.com/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "exit_fee_pence",
+    "annual_rise_pence"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "aaisp-home1-fttp-openreach",
+   "provider_id": "aaisp",
+   "name": "Home::1 FTTP (Openreach) from price",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": null,
+   "monthly_pence": 3700,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": null,
+   "one_off_fees": [
+    {
+     "label": "New install or migration on 12 month term",
+     "pence": 0
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "1 or 12 month minimum term options; the 'from £37' is not tied to a term or speed on the page. Includes fixed IPv4 + IPv6.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.aa.net.uk/broadband/home1/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "download_mbps",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  },
+  {
+   "id": "aaisp-home1-fttp-cityfibre",
+   "provider_id": "aaisp",
+   "name": "Home::1 FTTP (CityFibre) from price",
+   "technology": "FTTP",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": 1,
+   "monthly_pence": 3500,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": 1000,
+   "one_off_fees": [
+    {
+     "label": "New install or migration",
+     "pence": 1000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "CityFibre areas only. 1 month minimum term. Speeds 160M-2.5G; 'from' price not tied to a speed.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.aa.net.uk/broadband/home1/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "download_mbps",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": true
+  },
+  {
+   "id": "aaisp-home1-vdsl",
+   "provider_id": "aaisp",
+   "name": "Home::1 VDSL / G.fast from price",
+   "technology": "FTTC",
+   "download_mbps": null,
+   "upload_mbps": null,
+   "speed_note": null,
+   "contract_months": null,
+   "monthly_pence": 4500,
+   "price_is_from": true,
+   "intro_pence": null,
+   "intro_months": null,
+   "annual_rise_pence": null,
+   "rise_month": null,
+   "rise_rule": "Not stated on the page.",
+   "exit_fee_pence": null,
+   "exit_fee_rule": null,
+   "upfront_pence": null,
+   "one_off_fees": [
+    {
+     "label": "Install from (term dependent)",
+     "pence": 6000
+    }
+   ],
+   "cashback_pence": 0,
+   "out_of_contract_rule": null,
+   "social_tariff": null,
+   "eligibility_notes": "1, 6 or 12 month term options; install from £60, migration from £0 depending on term.",
+   "offer_ends": null,
+   "regions": {},
+   "source_url": "https://www.aa.net.uk/broadband/home1/",
+   "extra_source_urls": [],
+   "retrieved_at": "2026-10-11",
+   "observed_at": "2026-10-11T20:00:00+01:00",
+   "collected_by": "manual",
+   "review_flags": [
+    "contract_months",
+    "download_mbps",
+    "exit_fee_pence",
+    "annual_rise_pence",
+    "upload_mbps",
+    "upfront_pence",
+    "price_is_from"
+   ],
+   "needs_review": true,
+   "costable": false
+  }
+ ]
+}

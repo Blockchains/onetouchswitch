@@ -15,6 +15,38 @@ function Field({ form, name, label, validators, ...rest }) {
     <input id={rest.id ?? name} value={f.state.value} onBlur={f.handleBlur} onChange={(e) => f.handleChange(e.target.value)} {...rest} />{fieldErr(f)}</div>)}</form.Field>);
 }
 
+const canCost = (o) => o.monthly_pence != null && o.contract_months != null;
+const speed = (o) => [o.download_mbps != null ? `${o.download_mbps}Mbps down` : null, o.upload_mbps != null ? `${o.upload_mbps}Mbps up` : null].filter(Boolean).join(" / ") || "speed not stated";
+const missing = { monthly_pence: "monthly price", contract_months: "contract length", download_mbps: "speed", upload_mbps: "upload speed", exit_fee_pence: "exit fee", annual_rise_pence: "£ price rise", upfront_pence: "one-off fees", price_is_from: "'from' price (depends on address)" };
+/** Published offers grouped by provider with a filter. Offers without a published price or contract can't be costed. */
+function OfferList({ offers, version, publishedAt, selected, onToggle, onEdit }) {
+  const [prov, setProv] = useState("");
+  const providers = [...new Map(offers.map((o) => [o.provider_id, o.provider?.name ?? o.provider_id])).entries()].sort((a, b) => a[1].localeCompare(b[1]));
+  const shown = offers.filter((o) => !prov || o.provider_id === prov);
+  return (<>
+    <div className="row"><div><label htmlFor="prov-filter">Filter by provider</label>
+      <select id="prov-filter" value={prov} onChange={(e) => setProv(e.target.value)}><option value="">All providers ({offers.length} offers)</option>{providers.map(([id, n]) => <option key={id} value={id}>{n} ({offers.filter((o) => o.provider_id === id).length})</option>)}</select></div></div>
+    <p className="mut" data-testid="catalogue-meta">Catalogue v{version}{publishedAt ? `, published ${publishedAt.slice(0, 10)}` : ""}. Prices were read from each provider's own website on the date shown. Anything a provider's page didn't state is marked, not guessed.</p>
+    <ul data-testid="offers" className="offers">{shown.map((o) => (<li key={o.id} data-offer={o.id}>
+      <label className="inline"><input type="checkbox" disabled={!canCost(o)} checked={selected.includes(o.id)} onChange={(e) => onToggle(o.id, e.target.checked)} />{" "}
+        <b>{o.provider?.name ?? o.provider_id}: {o.name}</b>{", "}
+        {o.monthly_pence == null ? "price not published" : `${o.price_is_from ? "from " : ""}${fmt(o.monthly_pence)}/month`}
+        {o.intro_months ? ` (first ${o.intro_months} months ${fmt(o.intro_pence)})` : ""}
+        {", "}{o.contract_months ? `${o.contract_months} month${o.contract_months > 1 ? "s" : ""}` : "contract length not stated"}
+        {o.upfront_pence ? `, ${fmt(o.upfront_pence)} upfront` : ""}{o.annual_rise_pence ? `, +${fmt(o.annual_rise_pence)}/month each year` : ""}
+        {o.social_tariff ? <> <span className="pill">Social tariff</span></> : null}{o.needs_review ? <> <span className="pill warn" title={(o.review_flags ?? []).map((f) => missing[f] ?? f).join(", ")}>Needs review</span></> : null}</label>
+      <div className="mut">{speed(o)}{o.speed_note ? ` (${o.speed_note})` : ""}{o.technology ? ` · ${o.technology}` : ""}</div>
+      {o.rise_rule ? <div className="mut">Price changes: {o.rise_rule}</div> : null}
+      {o.exit_fee_pence != null || o.exit_fee_rule ? <div className="mut">Exit fee: {o.exit_fee_pence != null ? fmt(o.exit_fee_pence) : ""}{o.exit_fee_rule ? ` ${o.exit_fee_rule}` : ""}</div> : null}
+      {o.one_off_fees?.length ? <div className="mut">One-off: {o.one_off_fees.map((f) => `${f.label} ${f.pence == null ? "not stated" : fmt(f.pence)}`).join("; ")}</div> : null}
+      {o.eligibility_notes ? <div className="mut">{o.eligibility_notes}</div> : null}
+      {o.needs_review ? <div className="mut" data-testid="review-flags">Not on the provider's page: {(o.review_flags ?? []).map((f) => missing[f] ?? f).join(", ")}.</div> : null}
+      {!canCost(o) ? <div className="mut">Can't be costed until the provider publishes a price and contract length. Use "Edit costs" with the figures you're quoted.</div> : null}
+      <div className="copy">{o.copy}</div>
+      <div className="mut">Seen {(o.retrieved_at ?? o.observed_at).slice(0, 10)} at <a href={o.source_url} rel="nofollow noopener" target="_blank">source</a>{o.reviewed_by ? ` · reviewer: ${o.reviewed_by}` : ""} · catalogue v{version} · <button type="button" className="link" onClick={() => onEdit(o)}>Edit costs</button></div></li>))}</ul>
+  </>);
+}
+
 function PostcodeStep({ onArea, onNotFound }) {
   const [err, setErr] = useState(null); const [busy, setBusy] = useState(false);
   const form = useForm({ defaultValues: { postcode: "" }, onSubmit: async ({ value }) => {
@@ -90,7 +122,7 @@ export function Compare() {
   const loc = area?.location ?? null;
 
   function pickArea(a) { setArea(a); setNotFound(undefined); setSelected([]); setResult(null); setOffline(null); }
-  function editOffer(o) { setEditIdx(-1); setDraft({ ...emptyQuote, label: `${o.provider?.name ?? o.provider_id} — ${o.name} (my costs)`.slice(0, 120), monthly: poundsOf(o.monthly_pence), upfront: poundsOf(o.upfront_pence), months: String(o.contract_months), rise: poundsOf(o.annual_rise_pence), cashback: poundsOf(o.cashback_pence), provider_id: o.provider_id, from_offer: o.id }); }
+  function editOffer(o) { setEditIdx(-1); setDraft({ ...emptyQuote, label: `${o.provider?.name ?? o.provider_id} — ${o.name} (my costs)`.slice(0, 120), monthly: o.monthly_pence == null ? "" : poundsOf(o.monthly_pence), upfront: poundsOf(o.upfront_pence ?? 0), months: String(o.contract_months ?? 24), rise: poundsOf(o.annual_rise_pence ?? 0), cashback: poundsOf(o.cashback_pence ?? 0), provider_id: o.provider_id, from_offer: o.id }); }
   function saveQuote(q) { if (editIdx != null && editIdx >= 0) setQuotes(quotes.map((x, i) => (i === editIdx ? q : x))); else setQuotes([...quotes, q]); setEditIdx(null); setDraft(emptyQuote); setResult(null); }
   function currentDeal() {
     const m = toPence(cur.monthly); if (Number.isNaN(m)) return undefined;
@@ -106,7 +138,7 @@ export function Compare() {
   }
   function save() { const rec = ots.saved.save(result, lastReq, { outward: loc?.outward ?? null, catalogue_version: area?.catalogue_version ?? null }); setSaved(rec.id); }
   async function keepOffline() { setOffline("Saving…"); try { const r = await ots.keepAreaOffline(loc.area); setOffline(`${r.files} postcode files for ${r.area} are kept on this device.`); } catch { setOffline("Couldn't save postcode files. Try again when you're online."); } }
-  const longest = Math.max(0, ...quotes.map((q) => q.contract_months), ...offers.filter((o) => selected.includes(o.id)).map((o) => o.contract_months));
+  const longest = Math.max(0, ...quotes.map((q) => q.contract_months), ...offers.filter((o) => selected.includes(o.id)).map((o) => o.contract_months ?? 0));
 
   return (
     <>
@@ -141,10 +173,8 @@ export function Compare() {
         </section>
 
         <section aria-labelledby="s4"><h2 id="s4">4. Deals to compare</h2>
-          {offers.length ? (<ul data-testid="offers" className="offers">{offers.map((o) => (<li key={o.id}>
-            <label className="inline"><input type="checkbox" checked={selected.includes(o.id)} onChange={(e) => { setResult(null); setSelected(e.target.checked ? [...selected, o.id] : selected.filter((x) => x !== o.id)); }} /> {o.provider?.name ?? o.provider_id}: {o.name}, {fmt(o.monthly_pence)}/month, {o.contract_months} months{o.upfront_pence ? `, ${fmt(o.upfront_pence)} upfront` : ""}{o.annual_rise_pence ? `, +${fmt(o.annual_rise_pence)}/month each April` : ""}</label>
-            <div className="copy">{o.copy}</div>
-            <div className="mut">Seen {o.observed_at.slice(0, 10)} at <a href={o.source_url} rel="nofollow noopener" target="_blank">source</a> · catalogue v{area.catalogue_version} · <button type="button" className="link" onClick={() => editOffer(o)}>Edit costs</button></div></li>))}</ul>)
+          {offers.length ? (<OfferList offers={offers} version={area.catalogue_version} publishedAt={area.published_at} selected={selected}
+            onToggle={(id, on) => { setResult(null); setSelected(on ? [...selected, id] : selected.filter((x) => x !== id)); }} onEdit={editOffer} />)
             : <p className="mut" data-testid="no-offers">{area.empty_reason}</p>}
           <QuoteForm key={`${editIdx}:${JSON.stringify(draft)}`} initial={draft} editing={editIdx != null} onSave={saveQuote} onCancel={() => { setEditIdx(null); setDraft(emptyQuote); }} />
           {quotes.length ? <ul data-testid="quotes">{quotes.map((x, i) => <li key={i}>{x.label}: {fmt(x.monthly_pence)}/month, {x.contract_months} months{x.upfront_pence ? `, ${fmt(x.upfront_pence)} upfront` : ""}{x.annual_rise_pence ? `, +${fmt(x.annual_rise_pence)} each April` : ""}{" "}

@@ -8,7 +8,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { Catalogue } from "../core/catalogue.mjs";
 const ROOT = new URL("..", import.meta.url).pathname;
-const cat = new Catalogue(process.env.OTS_CATALOGUE_DIR ?? join(ROOT, "data", "catalogue"));
+const cat = new Catalogue(process.env.OTS_CATALOGUE_DIR ?? join(ROOT, "catalogue"));
 const [cmd, arg, ...rest] = process.argv.slice(2);
 const opt = (k) => { const i = rest.indexOf(`--${k}`); return i >= 0 ? rest[i + 1] : (process.argv.includes(`--${k}`) ? process.argv[process.argv.indexOf(`--${k}`) + 1] : undefined); };
 const now = new Date().toISOString();

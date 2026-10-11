@@ -1,0 +1,52 @@
+{
+ "offer": {
+  "id": "youfibre-you-2000",
+  "provider_id": "youfibre",
+  "name": "You 2000",
+  "monthly_pence": 3499,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Install and set-up",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 0,
+  "rise_month": null,
+  "rise_rule": "No in-contract price rises; prices fixed for the 24-month term (page + offer T&Cs).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": "After 24 months the then-current list price in the YouFibre Price Book applies (offer T&Cs).",
+  "cashback_pence": 0,
+  "download_mbps": 1800,
+  "upload_mbps": 1800,
+  "speed_note": "Average symmetrical wired",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "Prices available until 31/10/26 (promotional period 01/10/26-31/10/26). YouFibre network areas only.",
+  "offer_ends": "2026-10-31",
+  "regions": {},
+  "source_url": "https://www.youfibre.com/our-plans/",
+  "extra_source_urls": [
+   "https://www.youfibre.com/legal/offer-terms-and-conditions/"
+  ],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

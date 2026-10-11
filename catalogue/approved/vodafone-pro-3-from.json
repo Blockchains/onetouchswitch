@@ -1,0 +1,49 @@
+{
+ "offer": {
+  "id": "vodafone-pro-3-from",
+  "provider_id": "vodafone",
+  "name": "Vodafone Pro 3 Broadband (from price)",
+  "monthly_pence": 3900,
+  "price_is_from": true,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": null,
+  "one_off_fees": [],
+  "contract_months": 24,
+  "annual_rise_pence": 350,
+  "rise_month": 4,
+  "rise_rule": "Page shows £42.50 on 1 April 2027 and £46 on 1 April 2028.",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": null,
+  "upload_mbps": null,
+  "speed_note": "Up to 2.2Gbps; full fibre only; includes 4G back-up and Super WiFi booster",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "Full fibre addresses only. 'From' price; speed tier for the price not stated.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.vodafone.co.uk/broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "download_mbps",
+   "exit_fee_pence",
+   "upload_mbps",
+   "upfront_pence",
+   "price_is_from"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: download_mbps, exit_fee_pence, upload_mbps, upfront_pence, price_is_from."
+ }
+}

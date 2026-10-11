@@ -16,3 +16,5 @@ button:disabled{opacity:.5;cursor:not-allowed}label.inline{display:inline;font-w
 tr.detail td{border-bottom:1px solid var(--bd);padding-top:0}textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;font:inherit}
 details.bill{border:1px dashed var(--bd);border-radius:10px;padding:10px;margin-bottom:10px}details.bill summary{cursor:pointer;font-weight:700}
 footer{margin-top:30px}.guide h2{font-size:22px}
+
+.pill.warn{background:#fef3c7;color:#92400e}

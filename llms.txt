@@ -1,6 +1,6 @@
 # onetouchswitch (static comparison app)
 
-> Static-only UK broadband comparison for onetouchswitch.com. It runs on GitHub Pages with client-side JS: OS Code-Point Open postcodes as static chunks, manual address, a reviewed versioned offer catalogue, a deterministic contract-cost engine in the browser, guides with search, saved comparisons in localStorage, in-browser PDF bill reading, and offline support. It has no runtime server or third-party API, and makes no orderability claims.
+> Static-only UK broadband comparison for onetouchswitch.com. It runs on GitHub Pages with client-side JS: OS Code-Point Open postcodes as static chunks, manual address, a versioned catalogue of UK broadband offers researched from provider pages (each with source URL, retrieved date, reviewer and needs_review), a deterministic contract-cost engine in the browser, guides with search, saved comparisons in localStorage, in-browser PDF bill reading, and offline support. It has no runtime server or third-party API, and makes no orderability claims.
 
 ## App and static API
 - [App](https://blockchains.github.io/onetouchswitch/)

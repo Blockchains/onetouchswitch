@@ -32,6 +32,7 @@ jobs:
           c "$B/api/v1/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['postcodes']['count']>1500000;assert d['engine_version']=='ots-static-2';print('postcodes',d['postcodes']['count'],'guides',d['guides']['count'])"
           c "$B/api/v1/postcode/HU1.json" | python3 -c "import json,sys;d=json.load(sys.stdin);r=[x for x in d['rows'] if x[0]=='HU1 1AA'][0];assert d['names'][r[2]]=='City of Kingston upon Hull';print('HU1 1AA ok')"
           c "$B/api/v1/postcode/areas.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert len(d['areas']['HU'])>10;print('areas ok')"
+          c "$B/api/v1/catalogue/current.json" | python3 -c "import json,sys;d=json.load(sys.stdin);o=d['offers'];assert d['version']>=1 and len(o)>=50;assert all(x['source_url'].startswith('https://') and x['reviewed_by'] and x['retrieved_at'] for x in o);print('catalogue v',d['version'],len(o),'offers',sum(x['costable'] for x in o),'costable',len(d['providers']),'providers')"
           c "$B/api/v1/handoff.json" | python3 -c "import json,sys;d=json.load(sys.stdin);print('approved handoffs',len(d['approved']))"
           c "$B/api/v1/guides/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['count']>=10;print('guides ok')"
           for p in "" sw.js engine/v1/ots-engine.mjs vendor/pdfjs/pdf.min.mjs vendor/pdfjs/pdf.worker.min.mjs guides/how-we-compare/ api/v1/catalogue/current.json llms.txt; do c -o /dev/null "$B/$p"; echo "ok /$p"; done

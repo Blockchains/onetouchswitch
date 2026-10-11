@@ -58,7 +58,7 @@ export class OTSStatic {
     let l = { location: null, caveats: caveatsFor(null) };
     if (typeof where === "string") { l = await this.location(where); if (l.error) return l; } else if (where?.location) l = where;
     const [doc, pv] = await Promise.all([this.catalogue(), this.providerView()]);
-    const list = l.location ? offersForArea(doc, l.location.area) : doc.offers.filter((o) => !o.regions?.areas?.length);
+    const list = l.location ? offersForArea(doc, l.location.area, l.location.outward) : doc.offers.filter((o) => !o.regions?.areas?.length && !o.regions?.outwards?.length);
     const offers = list.map((o) => ({ ...o, provider: pv(o.provider_id), copy: OFFER_COPY }));
     return { ...l, catalogue_version: doc.version, published_at: doc.published_at, offers, empty_reason: offers.length ? null : doc.version === 0 ? "No reviewed offers have been published yet. You can still compare quotes you've been given." : "No published offers match this area. You can still compare quotes you've been given." };
   }

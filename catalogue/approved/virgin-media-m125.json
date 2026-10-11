@@ -1,0 +1,60 @@
+{
+ "offer": {
+  "id": "virgin-media-m125",
+  "provider_id": "virgin-media",
+  "name": "M125 Fibre Broadband",
+  "monthly_pence": 2399,
+  "price_is_from": true,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Setup fee",
+    "pence": 0
+   },
+   {
+    "label": "Optional engineer install when self-install possible",
+    "pence": 3000
+   }
+  ],
+  "contract_months": null,
+  "annual_rise_pence": null,
+  "rise_month": null,
+  "rise_rule": "Not stated on the page.",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 132,
+  "upload_mbps": null,
+  "speed_note": "Average download speed",
+  "technology": "cable",
+  "social_tariff": null,
+  "eligibility_notes": "New customers only; Virgin Media network areas only; subject to survey, capacity and credit check. Minimum contract length is 'shown in your basket' (not on the page). £0 setup; £30 if you choose an engineer when self-install is possible.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.virginmedia.com/broadband",
+  "extra_source_urls": [
+   "https://www.virginmedia.com/broadband/broadband-only"
+  ],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "contract_months",
+   "exit_fee_pence",
+   "annual_rise_pence",
+   "upload_mbps",
+   "price_is_from"
+  ],
+  "needs_review": true,
+  "costable": false
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: contract_months, exit_fee_pence, annual_rise_pence, upload_mbps, price_is_from."
+ }
+}

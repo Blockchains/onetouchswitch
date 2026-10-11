@@ -39,7 +39,7 @@ const approved = (ho.approved ?? []).filter((x) => ids.has(x.provider_id) && /^h
 J(join(API, "handoff.json"), { note: "Provider links approved by Ismail. Empty = we only link to provider websites. A link is never an order.", approved }, true);
 
 // 3. Catalogue: every published immutable version + current.
-const pubDir = join(process.env.OTS_CATALOGUE_DIR ?? join(DATA, "catalogue"), "published");
+const pubDir = join(process.env.OTS_CATALOGUE_DIR ?? join(ROOT, "catalogue"), "published");
 let cat = { version: 0, published_at: null, offer_count: 0, offers: [] };
 if (existsSync(join(pubDir, "current.json"))) {
   for (const f of readdirSync(pubDir).filter((f) => /^v\d+\.json$/.test(f))) cpSync(join(pubDir, f), join(API, "catalogue", f));

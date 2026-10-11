@@ -12,7 +12,7 @@ The comparison engine and app for **[onetouchswitch.com](https://onetouchswitch.
 ```
 browser ── {base}/index.html + assets          (React, TanStack Form + Table; service worker for offline)
         ├─ {base}/api/v1/postcode/<OUT>.json    OS Code-Point Open, 1.75M GB postcodes chunked per outward code
-        ├─ {base}/api/v1/catalogue/current.json reviewed, versioned offers (v0 = nothing published -> honest empty state)
+        ├─ {base}/api/v1/catalogue/current.json reviewed, versioned offers (v1: 61 offers from 16 providers, researched 2026-10-11)
         ├─ {base}/api/v1/providers.json + handoff.json   provider sites; approved handoff links only (none = plain links)
         ├─ {base}/api/v1/guides/*.json          guides + client-side search
         ├─ {base}/vendor/pdfjs/                 self-hosted pdf.js: bills read on the device, never uploaded
@@ -27,7 +27,7 @@ build time only (GitHub Actions): stage Code-Point Open + provider link checks -
 | Postcode lookup | Fetches one small static file per outward code from this site. "Keep HU postcodes on this device" caches a whole area for offline use. |
 | NI, Jersey, Guernsey, Isle of Man | Recognised by postcode format with the right notice. You can still compare quotes. |
 | Manual address | Fallback when a postcode isn't found, or optional. Tidied in the browser and labelled "not verified". Never stored. |
-| Offer catalogue | Versioned JSON, human-reviewed (`npm run review`). Empty means an honest empty state plus the "Add a quote you've been given" form. |
+| Offer catalogue | Versioned JSON in `catalogue/published/`, built from a dated research file (`catalogue/research/`) where every figure was read from the provider's own page. Each offer carries `source_url`, `retrieved_at`, `reviewed_by`, `review_flags` and `needs_review`. Figures not on the page are `null`, never guessed; offers without a price or contract length are listed but not costed. |
 | Costing | Deterministic engine in the browser: in-contract £ rises, upfront fees, exit fees, out-of-contract price, and cashback shown but never deducted. |
 | Results UI | TanStack Table: sortable, shortlist ☆ with View all / Shortlist, monthly breakdown per row, "vs staying", exit-fee column, comparison period (longest / 12 / 18 / 24 / 36 months). Edit costs on any offer or quote. No email gate. |
 | Notices | Availability (always), KCOM (Hull and East Riding), Northern Ireland, crown dependencies, social tariff. |
@@ -55,7 +55,7 @@ npm run check:deps                 # fails if the build gains any external runti
 Host at a domain root (e.g. touch.grok.me) with `VITE_BASE=/ PAGES_URL=https://touch.grok.me npm run build`, and upload `site/` as-is.
 
 ## Honesty rules (enforced in code and tests)
-- Offers reach customers only after human review and versioned publication. The production catalogue is **empty** until Ismail approves offers.
+- Offers reach customers only through versioned publication with a named reviewer. v1 (2026-10-11) was researched from provider pages at Ismail's request, and the reviewer field says so. Each `needs_review` offer lists the fields its page did not state. Refresh: add a new dated research file, then run `node scripts/import-research.mjs <file> --reviewer "<name>"`.
 - Every offer shows "Published offer. Check availability with the provider."
 - No orderability claims, no "available at your address", and no orders placed for you. Cashback is never deducted.
 

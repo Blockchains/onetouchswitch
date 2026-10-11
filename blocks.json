@@ -3,7 +3,7 @@
   "schema_version": "1.0",
   "name": "onetouchswitch",
   "repo": "Blockchains/onetouchswitch",
-  "summary": "Static-only UK broadband comparison for onetouchswitch.com, running on GitHub Pages with client-side JS: OS Code-Point Open postcode chunks, manual address, reviewed versioned catalogue with honest empty state, deterministic dinero.js engine in the browser, TanStack form/table (shortlist, edit costs, comparison period), notices, approved-link-only handoff, guides with search, localStorage saved comparisons, in-browser PDF bill reading, offline service worker. No runtime server or third-party API.",
+  "summary": "Static-only UK broadband comparison for onetouchswitch.com, running on GitHub Pages with client-side JS: OS Code-Point Open postcode chunks, manual address, versioned catalogue of UK broadband offers researched from provider pages (source URL, date, reviewer, needs_review per offer), deterministic dinero.js engine in the browser, TanStack form/table (shortlist, edit costs, comparison period), notices, approved-link-only handoff, guides with search, localStorage saved comparisons, in-browser PDF bill reading, offline service worker. No runtime server or third-party API.",
   "kind": [
     "web-app",
     "library",

@@ -1,0 +1,50 @@
+{
+ "offer": {
+  "id": "toob-home2300",
+  "provider_id": "toob",
+  "name": "home2300",
+  "monthly_pence": 2900,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Installation",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 200,
+  "rise_month": 4,
+  "rise_rule": "+£2/month from the April 2027 bill and another +£2 from the April 2028 bill (page).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 2300,
+  "upload_mbps": 2300,
+  "speed_note": "Average symmetrical",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "toob network areas only. 12-month and monthly options exist with different prices (not captured).",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.toob.co.uk/",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

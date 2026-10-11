@@ -9,6 +9,9 @@ export const Deal = z.object({
   label: z.string().min(1).max(120),
   provider_id: z.string().max(60).optional(),
   monthly_pence: z.number().int().min(0).max(100000),
+  intro_pence: z.number().int().min(0).max(100000).optional(),   // introductory monthly price (e.g. 0 for "3 months free")
+  intro_months: z.number().int().min(1).max(36).optional(),       // number of months the intro price applies from month 1
+  rise_unknown: z.boolean().default(false),                       // provider says prices may change but states no £ amount
   upfront_pence: z.number().int().min(0).max(100000).default(0),
   contract_months: z.number().int().min(1).max(36),
   annual_rise_pence: z.number().int().min(0).max(5000).default(0), // £/month added each April-style anniversary
@@ -41,7 +44,8 @@ export function schedule(deal, start, horizon) {
       const riseNow = deal.rise_month ? month === deal.rise_month : i % 12 === 0;
       if (riseNow && i < deal.contract_months) rises += 1;
     }
-    out.push({ i, ym: `${y0 + Math.floor((m0 - 1 + i) / 12)}-${String(month).padStart(2, "0")}`, pence: deal.monthly_pence + rises * deal.annual_rise_pence });
+    const intro = deal.intro_months && deal.intro_pence != null && i < deal.intro_months;
+    out.push({ i, ym: `${y0 + Math.floor((m0 - 1 + i) / 12)}-${String(month).padStart(2, "0")}`, pence: intro ? deal.intro_pence : deal.monthly_pence + rises * deal.annual_rise_pence, ...(intro ? { intro: true } : {}) });
   }
   return out;
 }
@@ -63,6 +67,8 @@ export function costDeal(deal, start, horizon) {
     download_mbps: d.download_mbps ?? null,
     months_beyond_contract: Math.max(0, h - d.contract_months),
     beyond_contract_note: h > d.contract_months ? `This deal's contract is ${d.contract_months} months. For the other ${h - d.contract_months} months of the comparison period we assume the last contract price continues; the provider may charge more once the contract ends.` : null,
+    intro_note: d.intro_months && d.intro_pence != null ? `First ${d.intro_months} month${d.intro_months > 1 ? "s" : ""} at ${fmt(gbp(d.intro_pence))}, then ${fmt(gbp(d.monthly_pence))}.` : null,
+    rise_note: d.rise_unknown ? "The provider says the price may change during the contract but doesn't state the amount, so no rise is included. The real total may be higher." : null,
     schedule: sched,
   };
 }

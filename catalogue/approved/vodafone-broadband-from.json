@@ -1,0 +1,49 @@
+{
+ "offer": {
+  "id": "vodafone-broadband-from",
+  "provider_id": "vodafone",
+  "name": "Vodafone Broadband (from price; speed tier not stated)",
+  "monthly_pence": 2400,
+  "price_is_from": true,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": null,
+  "one_off_fees": [],
+  "contract_months": 24,
+  "annual_rise_pence": 350,
+  "rise_month": 4,
+  "rise_rule": "Home Broadband price increases by £3.50 each year on 1 April (page footer); page shows £27.50 on 1 April 2027 and £31 on 1 April 2028 for the £24 plan.",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": null,
+  "upload_mbps": null,
+  "speed_note": "Plan family up to 910Mbps; the £24 'from' price is not tied to a named speed on the page",
+  "technology": null,
+  "social_tariff": null,
+  "eligibility_notes": "Price depends on speed available at the address. Up to £300 credit towards early termination fees (not deducted).",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.vodafone.co.uk/broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "download_mbps",
+   "exit_fee_pence",
+   "upload_mbps",
+   "upfront_pence",
+   "price_is_from"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: download_mbps, exit_fee_pence, upload_mbps, upfront_pence, price_is_from."
+ }
+}

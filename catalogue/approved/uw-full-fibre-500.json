@@ -1,0 +1,55 @@
+{
+ "offer": {
+  "id": "uw-full-fibre-500",
+  "provider_id": "utility-warehouse",
+  "name": "Full Fibre 500",
+  "monthly_pence": 3000,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 599,
+  "one_off_fees": [
+   {
+    "label": "Postage and packing",
+    "pence": 599
+   },
+   {
+    "label": "Installation and connection",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 400,
+  "rise_month": 4,
+  "rise_rule": "+£4/month from April 2027 and again from April 2028 (page).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 500,
+  "upload_mbps": null,
+  "speed_note": "Average download",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "UW price promise: they pay double the difference if you find cheaper (terms apply). Up to £400 towards early termination fees (not deducted).",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://uw.co.uk/broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence",
+   "upload_mbps"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence, upload_mbps."
+ }
+}

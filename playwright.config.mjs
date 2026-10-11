@@ -5,7 +5,7 @@ export default defineConfig({
   testDir: "tests/e2e", timeout: 60000, retries: 0, reporter: [["list"]], workers: 1,
   use: { channel: process.env.PW_CHANNEL ?? "chrome", launchOptions: { args: ["--no-sandbox"] } },
   projects: [
-    { name: "pages-production-empty-catalogue", testMatch: /journey-static/, use: { baseURL: "http://127.0.0.1:8797" } },
+    { name: "pages-production-catalogue", testMatch: /journey-static/, use: { baseURL: "http://127.0.0.1:8797" } },
     { name: "pages-fixture-catalogue", testMatch: /journey-fixture/, use: { baseURL: "http://127.0.0.1:8798" } },
     { name: "offline-after-load", testMatch: /journey-offline/ },
   ],

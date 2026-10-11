@@ -1,0 +1,52 @@
+{
+ "offer": {
+  "id": "bt-fibre-essential",
+  "provider_id": "bt",
+  "name": "Fibre Essential",
+  "monthly_pence": 2899,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Activation fee (online exclusive)",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 400,
+  "rise_month": 4,
+  "rise_rule": "Price rises by £4.00/month from 31 March 2027 and again from 31 March 2028 (as shown on the page).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": "If you don't re-contract, price rises by up to £5 more than the last month of the term (bt.com/broadband legal text).",
+  "cashback_pence": 0,
+  "download_mbps": 35,
+  "upload_mbps": 8,
+  "speed_note": "32Mbps speed guarantee ; page shows 35-36Mbps down, 8-9Mbps up",
+  "technology": "FTTC",
+  "social_tariff": null,
+  "eligibility_notes": "New customers. 24 month contract, credit check and availability. £0 activation fee is an online exclusive. Up to £300 towards leaving fees as bill credit (not deducted).",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.bt.com/broadband/deals",
+  "extra_source_urls": [
+   "https://www.bt.com/broadband"
+  ],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

@@ -24,7 +24,7 @@ await ots.keepAreaOffline("HU");                     // pre-fetch postcode files
 | Postcode → area | `${BASE}/api/v1/postcode/{OUTWARD}.json`, with rows `[postcode, country_code, district_code, ward_code]` and `names` |
 | Area → outward codes | `${BASE}/api/v1/postcode/areas.json` |
 | Providers / approved handoff | `${BASE}/api/v1/providers.json`, `${BASE}/api/v1/handoff.json` (`approved: []` means plain links) |
-| Published offers | `${BASE}/api/v1/catalogue/current.json` (`version` 0 = nothing published) and `vN.json` |
+| Published offers | `${BASE}/api/v1/catalogue/current.json` and immutable `vN.json`. v1 has 61 researched offers. Each offer has `monthly_pence` (null if not published), `price_is_from`, `intro_pence`/`intro_months`, `contract_months`, `annual_rise_pence` + `rise_month` + `rise_rule`, `exit_fee_pence`/`exit_fee_rule`, `upfront_pence` + `one_off_fees[]`, `download_mbps`/`upload_mbps`, `social_tariff`, `eligibility_notes`, `regions` (`areas`, `outwards`, `exclude_outwards`), `source_url`, `retrieved_at`, `reviewed_by`, `review_flags`, `needs_review` and `costable` |
 | Guides | `${BASE}/api/v1/guides/index.json`, `${BASE}/api/v1/guides/{slug}.json`, HTML at `${BASE}/guides/{slug}/` |
 | pdf.js (bill reading) | `${BASE}/vendor/pdfjs/` (loaded by the engine; a cross-origin worker is handled by pdf.js) |
 
@@ -32,5 +32,6 @@ Alternatively, host the whole static bundle on touch.grok.me itself: `VITE_BASE=
 
 ## UX copy rules (must keep)
 - Every catalogue offer: **"Published offer. Check availability with the provider."**
+- Show `needs_review` offers with the fields they lack. Offers with `costable: false` can't be passed to `compare` (it throws); let the customer enter the price as a quote instead.
 - Never say "available at your address", "order now", "buy now", "switch now" or "we'll switch you". Provider links read "Check availability with {Provider}".
 - If an engine call throws or times out, show `UNAVAILABLE` ("Live comparison is unavailable right now. Please try again shortly.") and no numbers. If nothing is published, show `empty_reason` and the "add a quote" form. Never invent offers.

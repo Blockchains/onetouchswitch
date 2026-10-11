@@ -1,0 +1,49 @@
+{
+ "offer": {
+  "id": "vodafone-essentials",
+  "provider_id": "vodafone",
+  "name": "Vodafone Essentials Broadband (social tariff)",
+  "monthly_pence": 2000,
+  "price_is_from": true,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [],
+  "contract_months": 12,
+  "annual_rise_pence": 0,
+  "rise_month": null,
+  "rise_rule": "No in-contract price increase (page).",
+  "exit_fee_pence": 0,
+  "exit_fee_rule": "12-month contract, no early termination fee (page).",
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 80,
+  "upload_mbps": null,
+  "speed_note": null,
+  "technology": null,
+  "social_tariff": {
+   "name": "Vodafone Essentials Broadband",
+   "eligible": "JSA, Universal Credit, Pension Credit, ESA, Income Support, Reduced Earnings Allowance, PIP, Disability Allowance"
+  },
+  "eligibility_notes": "Social tariff: new and existing customers receiving listed benefits. Speeds up to 80Mbps.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.vodafone.co.uk/broadband/essentials-broadband",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "upload_mbps",
+   "price_is_from"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: upload_mbps, price_is_from."
+ }
+}

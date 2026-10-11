@@ -23,7 +23,7 @@ export function Results({ data, readOnly = false }) {
   const columns = useMemo(() => [
     ...(readOnly ? [] : [col.display({ id: "star", header: "Shortlist", cell: (c) => { const on = shortlist.has(c.row.original.id); return <button type="button" className="star" aria-pressed={on} aria-label={`${on ? "Remove" : "Add"} ${c.row.original.label} ${on ? "from" : "to"} shortlist`} onClick={() => toggle(shortlist, setShortlist, c.row.original.id)}>{on ? "★" : "☆"}</button>; } })]),
     col.accessor("rank", { header: "#" }),
-    col.accessor("label", { header: "Deal", cell: (c) => { const r = c.row.original; return (<><b>{r.label}</b><div className="copy">{r.copy}</div>{r.cashback_note ? <div className="mut">{r.cashback_note}</div> : null}{r.beyond_contract_note ? <div className="mut">{r.beyond_contract_note}</div> : null}</>); } }),
+    col.accessor("label", { header: "Deal", cell: (c) => { const r = c.row.original; return (<><b>{r.label}</b><div className="copy">{r.copy}</div>{r.cashback_note ? <div className="mut">{r.cashback_note}</div> : null}{r.beyond_contract_note ? <div className="mut">{r.beyond_contract_note}</div> : null}{r.intro_note ? <div className="mut">{r.intro_note}</div> : null}{r.rise_note ? <div className="mut" data-testid="rise-note">{r.rise_note}</div> : null}</>); } }),
     col.accessor("contract_months", { header: "Contract", cell: (c) => `${c.getValue()} months${c.row.original.upfront_pence ? `, ${fmt(c.row.original.upfront_pence)} upfront` : ""}` }),
     col.accessor("first_month_pence", { header: "First month", cell: (c) => fmt(c.getValue()) }),
     col.accessor("total_pence", { header: `Total over ${data.horizon_months} months`, cell: (c) => fmt(c.getValue()) }),

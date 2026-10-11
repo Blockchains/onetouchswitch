@@ -26,10 +26,19 @@ test("postcode lookups from static chunks (England, Scotland, Wales, Hull) + not
   assert.equal((await c.location("bad")).status, 400);
   const ni = await c.location("BT1 1AA"); assert.equal(ni.location.country, "Northern Ireland"); assert.ok(ni.caveats.some((x) => x.code === "ni"));
 });
-test("production catalogue is empty -> honest empty state; no-postcode path works", async () => {
+test("production catalogue v1: researched offers with sources, area + outward filtering, costing, no-postcode path", async () => {
   const c = new OTSStatic(base);
-  const r = await c.offers("HU1 1AA"); assert.equal(r.catalogue_version, 0); assert.deepEqual(r.offers, []); assert.match(r.empty_reason, /No reviewed offers/);
-  const n = await c.offers(null); assert.equal(n.location, null); assert.deepEqual(n.offers, []);
+  const doc = await c.catalogue(); assert.ok(doc.version >= 1); assert.ok(doc.offer_count >= 50); assert.ok(doc.offers.every((o) => o.reviewed_by && /^https:\/\//.test(o.source_url) && o.retrieved_at));
+  const hu1 = (await c.offers("HU1 1AA")).offers.map((o) => o.id);
+  assert.ok(hu1.includes("kcom-power-fibre-100-hull")); assert.ok(!hu1.includes("kcom-power-fibre-100-rollout")); assert.ok(!hu1.some((id) => id.startsWith("community-fibre")));
+  const sw = (await c.offers("SW1A 1AA")).offers.map((o) => o.id);
+  assert.ok(sw.includes("community-fibre-300")); assert.ok(!sw.some((id) => id.startsWith("kcom")));
+  assert.ok((await c.offers("HU1 1AA")).offers.every((o) => o.copy === OFFER_COPY));
+  const res = await c.compare({ postcode: "HU1 1AA", start: "2026-10", offer_ids: ["bt-full-fibre-300", "kcom-power-fibre-100-hull", "hyperoptic-1gb"] });
+  const by = Object.fromEntries(res.results.map((r) => [r.id, r.total_pence]));
+  assert.deepEqual(by, { "bt-full-fibre-300": 83976, "kcom-power-fibre-100-hull": 65176, "hyperoptic-1gb": 64200 });
+  await assert.rejects(c.compare({ start: "2026-10", offer_ids: ["bt-home-essentials"] }), /can't be costed/);
+  const n = await c.offers(null); assert.equal(n.location, null); assert.ok(n.offers.length > 30); assert.ok(n.offers.every((o) => !o.regions?.areas?.length && !o.regions?.outwards?.length));
   assert.deepEqual(await c.handoff(), []);
 });
 test("fixture catalogue: area filtering, copy, approved handoff only, edit-as-quote, comparison period", async () => {

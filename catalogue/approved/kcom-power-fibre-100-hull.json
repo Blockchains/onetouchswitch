@@ -1,0 +1,72 @@
+{
+ "offer": {
+  "id": "kcom-power-fibre-100-hull",
+  "provider_id": "kcom",
+  "name": "Power Fibre 100 (HU1-HU17)",
+  "monthly_pence": 2499,
+  "price_is_from": false,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": 0,
+  "one_off_fees": [
+   {
+    "label": "Connection",
+    "pence": 0
+   }
+  ],
+  "contract_months": 24,
+  "annual_rise_pence": 200,
+  "rise_month": 3,
+  "rise_rule": "Price increases by £2 on 1 March 2027 and again on 1 March 2028 (KCOM special offers document).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": 100,
+  "upload_mbps": 100,
+  "speed_note": "Average download speed",
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "Autumn Offer 2026 for new residential customers in postcodes HU1-HU17. Offer 10 Sep - 3 Nov 2026. Standard published prices apply after 24 months.",
+  "offer_ends": "2026-11-03",
+  "regions": {
+   "outwards": [
+    "HU1",
+    "HU2",
+    "HU3",
+    "HU4",
+    "HU5",
+    "HU6",
+    "HU7",
+    "HU8",
+    "HU9",
+    "HU10",
+    "HU11",
+    "HU12",
+    "HU13",
+    "HU14",
+    "HU15",
+    "HU16",
+    "HU17"
+   ]
+  },
+  "source_url": "https://www.kcom.com/pricing/media/1447/p02-s14_kcom_consumer_special_offers.pdf",
+  "extra_source_urls": [
+   "https://www.kcom.com/home/packages/"
+  ],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "exit_fee_pence"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: exit_fee_pence."
+ }
+}

@@ -1,0 +1,136 @@
+URL: https://www.aa.net.uk/broadband/home1/
+BROADBAND 
+TELEPHONY 
+ETHERNET 
+ETC 
+HELP 
+STATUS LOGIN  
+QUALITY BROADBAND FOR THE HOME
+Broadband Services for the Home
+ VIEW OUR BROADBAND KNOWLEDGEBASE
+HOME BROADBAND HOME::1
+
+Home::1 is our domestic broadband package. It includes a real fixed legacy IPv4 address and a block of routed IPv6 addresses. (An additional block of four or eight IPv4 address is available upon request at no extra cost, contact our sales team.) We offer both the slower ADSL services and the faster VDSL (fibre to the cabinet) services, FTTP and G.FAST services where available.
+
+How to start?
+
+As the options vary from place to place, the best place to start is to put your postcode or phone number in to the Availability Checker below. It will then tell you the options available to you. You can then progress to view the monthly and install costs for that specific service and place the order if you wish. You can also view the price list of all the various options below. Or you can go straight to the order form.
+
+Our ADSL and VDSL services are now combined with what was known as the phone line or copper pair.
+
+Broadband availability checker
+Postcode or phone number
+Please enter a phone number or a postcode to check. For postcodes, you will be asked to select an address.
+Check now
+Note: This checker works with both the BT Wholesale and TalkTalk Business carriers and enables you to place a broadband order online, based upon what services and technologies are available in your location. Should you wish to see more details about which BT Wholesale facilities are available, you can visit the BT Wholesale Availability Checker directly.
+HOME::1 PRICING
+FTTP (Openreach)
+
+FTTP services using Openreach's network. Speeds up to 1Gb/s.
+
+New install or migrations are free on 12 month term.
+1 or 12 month minimum term options.
+Monthly from £37.00.
+Using Openreach's infrastructure, not available in all areas.
+MORE INFO
+ORDER NOW
+FTTP (CityFibre)
+
+FTTP services using CityFibre's network. Speeds of 160M to 2.5G, symmetrical in most cases.
+
+New install £10.00 or migrate for £10.00
+1 month minimum term
+Monthly from £35.00
+Using CityFibre's infrastructure, not available in all areas
+MORE INFO
+VDSL
+
+VDSL services, speeds up to 80Mb/s, and G.FAST. (AKA SoGEA or SoFAST)
+
+Install from £60.00, migration from 0p (depends on term)
+1, 6 or 12 month term options
+Monthly price from £45.00
+MORE INFO
+ORDER NOW
+ADSL
+
+ADSL services, speeds up to 24Mb/s (AKA SoTAP or SoADSL)
+
+Install from £0, migration from £0
+1, 6 or 12 month term options
+Monthly price from £35.00
+MORE INFO
+ORDER NOW
+Service specifics
+
+Important notes
+
+Install dates
+
+Monthly usage quota
+
+Domestic service
+
+Block of IP addresses
+
+Modem and WiFi
+
+Bonded lines
+
+Initial term
+
+Business package
+
+  
+BROADBAND
+Overview
+Why choose A&A?
+Home::1
+SoHo::1
+L2TP service
+Copper pair
+Regrades and moves
+We'll fix your line
+Real Internet
+Leaving us
+Our Network
+Bring your own IP
+TELEPHONY
+Overview
+VoIP
+Types of number
+Mobile voice (SIP2SIM)
+Data SIMs
+Text messaging
+Main telecom prices
+VoIP security
+Calling emergency services
+Number porting
+HELP
+Overview
+MSO
+Knowledge base
+FIREBRICK
+Overview
+FireBrick FB2900 Rental
+LEGAL
+Overview
+Direct Debits
+Paying by bank transfer
+Policy: Treating vulnerable customers fairly
+PRIVACY NOTICE
+Overview
+Privacy Notice Legal Complaints © 2026 Andrews & Arnold Ltd. E&OE. Unless otherwise stated prices include VAT at 20%. AA® SIP2SIM® SAFETYPHONE®
+CONTACT SALES
+EMAIL	sales@aa.net.uk
+PHONE	03333 400222
+(Mon-Fri 9am-5pm)
+SMS	01344 400222
+CONTACT SUPPORT
+EMAIL	support@aa.net.uk
+PHONE	03333 400999
+(Mon-Fri 8am-6pm, Sat 10am-2pm)
+SMS	01344 400999
+CLOSE 
+LIVE CHAT
+CONTACT PAGE

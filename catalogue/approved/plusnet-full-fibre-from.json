@@ -1,0 +1,49 @@
+{
+ "offer": {
+  "id": "plusnet-full-fibre-from",
+  "provider_id": "plusnet",
+  "name": "Plusnet Full Fibre (from price; tier not stated)",
+  "monthly_pence": 2499,
+  "price_is_from": true,
+  "intro_pence": null,
+  "intro_months": null,
+  "upfront_pence": null,
+  "one_off_fees": [],
+  "contract_months": 24,
+  "annual_rise_pence": 400,
+  "rise_month": 4,
+  "rise_rule": "On 31 March each year the monthly plan price increases by £4 (page legal text).",
+  "exit_fee_pence": null,
+  "exit_fee_rule": null,
+  "out_of_contract_rule": null,
+  "cashback_pence": 0,
+  "download_mbps": null,
+  "upload_mbps": null,
+  "speed_note": null,
+  "technology": "FTTP",
+  "social_tariff": null,
+  "eligibility_notes": "Per-plan prices load behind a bot check and could not be read; only 'Full Fibre deals from £24.99 a month' is public. £50 Reward Card with Full Fibre 900 until 25 Oct 2026.",
+  "offer_ends": null,
+  "regions": {},
+  "source_url": "https://www.plus.net/broadband/",
+  "extra_source_urls": [],
+  "retrieved_at": "2026-10-11",
+  "observed_at": "2026-10-11T20:00:00+01:00",
+  "collected_by": "manual",
+  "review_flags": [
+   "download_mbps",
+   "exit_fee_pence",
+   "upload_mbps",
+   "upfront_pence",
+   "price_is_from"
+  ],
+  "needs_review": true,
+  "costable": true
+ },
+ "review": {
+  "reviewer": "Grok Bot research agent (for Ismail Malik)",
+  "reviewed_at": "2026-10-11T19:17:55.267Z",
+  "decision": "approved",
+  "note": "Each figure checked against source_url on 2026-10-11 (provider's own page, rendered in a browser). Not yet signed off by a human. Needs review: download_mbps, exit_fee_pence, upload_mbps, upfront_pence, price_is_from."
+ }
+}

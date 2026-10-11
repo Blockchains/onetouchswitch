@@ -21,6 +21,7 @@
     { "id": "kcom", "name": "KCOM", "url": "https://www.kcom.com/home/packages/", "districts": ["E06000010","E06000011"] },
     { "id": "lit-fibre", "name": "Lit Fibre", "url": "https://www.litfibre.com/" },
     { "id": "g-network", "name": "G.Network", "url": "https://www.g.network/" },
-    { "id": "toob", "name": "toob", "url": "https://www.toob.co.uk/" }
+    { "id": "toob", "name": "toob", "url": "https://www.toob.co.uk/" },
+    { "id": "aaisp", "name": "Andrews & Arnold (A&A)", "url": "https://www.aa.net.uk/broadband/" }
   ]
 }

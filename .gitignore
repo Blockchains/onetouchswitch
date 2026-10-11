@@ -6,3 +6,5 @@ test-results/
 playwright-report/
 *.done
 site/
+catalogue/pending/
+catalogue/rejected/

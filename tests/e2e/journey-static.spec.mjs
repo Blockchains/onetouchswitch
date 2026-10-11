@@ -1,9 +1,9 @@
-// Production Pages build (empty catalogue). Everything runs from static files + the in-browser engine.
+// Production Pages build (researched catalogue v1; no handoffs approved). Everything runs from static files + the in-browser engine.
 import { test, expect } from "@playwright/test";
 import { guardOrigin, findArea, addQuote } from "./helpers.mjs";
 const ORIGIN = "http://127.0.0.1:8797";
 
-test("postcode -> notices -> empty catalogue -> quotes -> acceptance total -> saved (no email gate, no external requests)", async ({ page }) => {
+test("postcode -> notices -> published catalogue -> quotes -> acceptance total -> saved (no email gate, no external requests)", async ({ page }) => {
   const done = guardOrigin(page, ORIGIN);
   await page.goto("/onetouchswitch/");
   await expect(page.locator("input[type=email]")).toHaveCount(0);
@@ -11,7 +11,8 @@ test("postcode -> notices -> empty catalogue -> quotes -> acceptance total -> sa
   await expect(page.getByTestId("area")).toContainText("City of Kingston upon Hull");
   await expect(page.locator('[data-caveat="kcom-area"]')).toBeVisible();
   await expect(page.locator('[data-caveat="social-tariff"]')).toBeVisible();
-  await expect(page.getByTestId("no-offers")).toContainText("No reviewed offers have been published yet");
+  await expect(page.getByTestId("offers")).toContainText("KCOM: Power Fibre 100 (HU1-HU17)");
+  await expect(page.getByTestId("offers")).not.toContainText("Community Fibre");
   await addQuote(page, { label: "Quote A", monthly: "29.99", months: "24", rise: "3" });
   await page.getByRole("button", { name: "Compare total cost" }).click();
   const rows = page.getByTestId("results").locator("tbody tr[data-row]");
@@ -134,4 +135,33 @@ test("cross-origin embed (touch.grok.me model): another origin imports the engin
   }, { PAGES, pdf });
   expect(r).toEqual({ offers: 2, kcom: true, monthly: 3850, exit: 9600 });
   expect([...seen].sort()).toEqual(["http://127.0.0.1:8797", "http://127.0.0.1:8798"]);
+});
+
+test("published catalogue: provider filter, full offer details, cost several real offers; uncostable offers can't be ticked", async ({ page }) => {
+  const done = guardOrigin(page, ORIGIN);
+  await page.clock.setFixedTime(new Date("2026-10-15T12:00:00"));
+  await page.goto("/onetouchswitch/");
+  await findArea(page, "HU1 1AA");
+  const offers = page.getByTestId("offers");
+  await expect(page.getByTestId("catalogue-meta")).toContainText("Catalogue v1");
+  await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("£30.99/month");
+  await expect(offers.locator("li[data-offer=bt-full-fibre-300]")).toContainText("reviewer:");
+  await expect(offers.locator("li[data-offer=bt-full-fibre-300] a", { hasText: "source" })).toHaveAttribute("href", "https://www.bt.com/broadband/deals");
+  await expect(offers.locator("li[data-offer=bt-home-essentials] input[type=checkbox]")).toBeDisabled();
+  await expect(offers.locator("li[data-offer=bt-home-essentials]")).toContainText("price not published");
+  await page.getByLabel("Filter by provider").selectOption("kcom");
+  await expect(offers.locator("li")).toHaveCount(3);
+  await offers.locator("li[data-offer=kcom-power-fibre-100-hull] input").check();
+  await page.getByLabel("Filter by provider").selectOption("");
+  for (const id of ["bt-full-fibre-300", "hyperoptic-1gb", "youfibre-you-1000"]) await offers.locator(`li[data-offer=${id}] input`).check();
+  await page.getByRole("button", { name: "Compare total cost" }).click();
+  const t = page.getByTestId("results");
+  await expect(t.locator("tr[data-row=bt-full-fibre-300]")).toContainText("£839.76");
+  await expect(t.locator("tr[data-row=hyperoptic-1gb]")).toContainText("£642.00");
+  await expect(t.locator("tr[data-row=kcom-power-fibre-100-hull]")).toContainText("£651.76");
+  await expect(t.locator("tr[data-row=youfibre-you-1000]")).toContainText("£576.00");
+  await expect(t.locator("tr[data-row]").nth(0)).toContainText("YouFibre");
+  await expect(t).toContainText("Published offer. Check availability with the provider.");
+  await expect(page.locator("body")).not.toContainText(/order now|buy now|switch now|available at your address|we'll switch you/i);
+  done();
 });
