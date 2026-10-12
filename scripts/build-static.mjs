@@ -84,12 +84,23 @@ J(join(API, "index.json"), { name: "One Touch Switch comparison: static API", ge
   catalogue: { url: `${BASE}/api/v1/catalogue/current.json`, version: cat.version, offers: cat.offers.length }, guides: { url: `${BASE}/api/v1/guides/index.json`, count: guides.length },
   engine: `${BASE}/engine/v1/ots-engine.mjs`, pdfjs: `${BASE}/vendor/pdfjs/pdf.min.mjs`, offer_copy: "Published offer. Check availability with the provider.", docs: "https://github.com/Blockchains/onetouchswitch/blob/main/docs/INTEGRATION.md" }, true);
 cpSync(join(ROOT, "llms.txt"), join(SITE, "llms.txt"));
+writeFileSync(join(SITE, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
+const sitemapUrls = [
+  `${BASE}/`,
+  `${BASE}/guides/`,
+  ...guides.map((g) => `${BASE}/guides/${g.slug}/`),
+  `${BASE}/llms.txt`,
+  `${BASE}/api/v1/index.json`,
+  `${BASE}/api/v1/catalogue/current.json`,
+  `${BASE}/api/v1/guides/index.json`,
+];
+writeFileSync(join(SITE, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
 writeFileSync(join(SITE, ".nojekyll"), "");
 cpSync(join(SITE, "index.html"), join(SITE, "404.html"));
 
 // 7. Service worker: precache the app shell + small data; postcode files are cached as they are used.
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
-const pre = ["", "index.html", "llms.txt", ...walk(join(SITE, "assets")).map((p) => relative(SITE, p)), "engine/v1/ots-engine.mjs",
+const pre = ["", "index.html", "llms.txt", "robots.txt", "sitemap.xml", ...walk(join(SITE, "assets")).map((p) => relative(SITE, p)), "engine/v1/ots-engine.mjs",
   "api/v1/index.json", "api/v1/providers.json", "api/v1/handoff.json", "api/v1/catalogue/current.json", "api/v1/postcode/areas.json", "api/v1/guides/index.json",
   ...guides.map((g) => `api/v1/guides/${g.slug}.json`), "guides/", ...guides.map((g) => `guides/${g.slug}/`), "vendor/pdfjs/pdf.min.mjs", "vendor/pdfjs/pdf.worker.min.mjs"];
 const h = createHash("sha256"); for (const p of pre) { const fp = join(SITE, p.endsWith("/") || p === "" ? join(p, "index.html") : p); h.update(p); h.update(readFileSync(fp)); }

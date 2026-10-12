@@ -39,7 +39,8 @@ jobs:
           for v in 1 2; do code=$(curl -sS -o /dev/null -w '%{http_code}' "$B/api/v1/catalogue/v$v.json"); test "$code" = "404"; echo "v$v not served ($code)"; done
           c "$B/api/v1/handoff.json" | python3 -c "import json,sys;d=json.load(sys.stdin);print('approved handoffs',len(d['approved']))"
           c "$B/api/v1/guides/index.json" | python3 -c "import json,sys;d=json.load(sys.stdin);assert d['count']>=10;print('guides ok')"
-          for p in "" sw.js engine/v1/ots-engine.mjs vendor/pdfjs/pdf.min.mjs vendor/pdfjs/pdf.worker.min.mjs guides/how-we-compare/ api/v1/catalogue/current.json llms.txt; do c -o /dev/null "$B/$p"; echo "ok /$p"; done
+          for p in "" sw.js engine/v1/ots-engine.mjs vendor/pdfjs/pdf.min.mjs vendor/pdfjs/pdf.worker.min.mjs guides/how-we-compare/ api/v1/catalogue/current.json llms.txt robots.txt sitemap.xml; do c -o /dev/null "$B/$p"; echo "ok /$p"; done
+          c "$B/sitemap.xml" | grep -q 'guides/how-we-compare/'; echo "sitemap has guides"
   live-journey:
     name: Online journey on the live site (postcode -> real offers -> compare; no console errors)
     needs: smoke
